@@ -151,7 +151,7 @@
   "end_full_path": {
     "android": "install/lib/libCaffe2_CPU.so", 
     "linux": "install/lib/libCaffe2_CPU.so", 
-    "win": "install/lib/Caffe2.dll"
+    "win": "install/lib/Caffe2_CPU.lib"
   }, 
   "need_cpu_info": "yes", 
   "only_for_host_os_tags": [

@@ -24,7 +24,7 @@ if "%BUILD_PYTHON%" == "ON" (
   echo You are compiling Caffe2 with Python support!
   echo To use it you need to set up CK env as following ^(after installation^)^:
   echo.
-  echo ck xset env tags=lib,caffe ; call tmp-ck-env.bat ; ipython2
+  echo ck xset env tags=lib,caffe2 & call tmp-ck-env.bat & ipython2
   echo.
   set /p id="Press enter to continue"
 )
@@ -44,14 +44,14 @@ set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DBLAS=%WHICH_BLAS% ^
  -DUSE_THREADS=%USE_THREADS% ^
  -DUSE_NERVANA_GPU=%USE_NERVANA_GPU% ^
- -DUSE_GLOG=%USE_GLOG% ^
+ -DUSE_GLOG=OFF ^
  -DUSE_GFLAGS=OFF ^
  -DUSE_LMDB=OFF ^
  -DUSE_LEVELDB=OFF ^
  -DUSE_LITE_PROTO=%USE_LITE_PROTO% ^
  -DUSE_NCCL=%USE_NCCL% ^
  -DUSE_NNPACK=%USE_NNPACK% ^
- -DUSE_OPENCV=%USE_OPENCV% ^
+ -DUSE_OPENCV=OFF ^
  -DUSE_CUDA=%USE_CUDA% ^
  -DUSE_CNMEM=%USE_CNMEM% ^
  -DUSE_ZMQ=%USE_ZMQ% ^
