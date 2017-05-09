@@ -7,20 +7,14 @@
 # See CK COPYRIGHT for copyright details.
 #
 # Developer(s):
-# - Grigori Fursin, 2015;
-# - Anton Lokhmotov, 2016.
+# - Grigori Fursin, 2017;
 #
 
 # PACKAGE_DIR
 # INSTALL_DIR
 
 echo "**************************************************************"
-echo "Preparing vars for Caffe ..."
-
-CK_OPENMP="-fopenmp"
-if [ "${CK_HAS_OPENMP}" = "0"  ]; then
-  CK_OPENMP=""
-fi
+echo "Preparing vars for Caffe 2 ..."
 
 OPENCV_DIR=${CK_ENV_LIB_OPENCV_JNI}
 if [ "${OPENCV_DIR}" == "" ]; then
@@ -30,7 +24,7 @@ fi
 # Print about python
 if [ "${BUILD_PYTHON}" == "ON" ] ; then
   echo ""
-  echo "You are compiling Caffe with Python support!"
+  echo "You are compiling Caffe2 with Python support!"
   echo "To use it you need to set up CK env as following (after installation)":
   echo ""
   echo "ck xset env tags=lib,caffe && . ./tmp-ck-env.bat && ipython2"

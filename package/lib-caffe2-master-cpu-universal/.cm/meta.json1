@@ -43,22 +43,12 @@
       "USE_ROCKSDB": "OFF", 
       "USE_THREADS": "ON", 
       "USE_ZMQ": "OFF", 
-      "WHICH_BLAS": "Eigen"
+      "WHICH_BLAS": "OpenBLAS"
     }, 
     "use_git_revision": "yes", 
     "version": "trunk"
   }, 
   "deps": {
-    "python": {
-      "force_target_as_host": "yes", 
-      "local": "yes", 
-      "name": "python", 
-      "sort": 0, 
-      "only_for_target_os_tags": [
-        "windows"
-      ], 
-      "tags": "compiler,python"
-    }, 
     "cmake": {
       "force_target_as_host": "yes", 
       "local": "yes", 
@@ -77,6 +67,13 @@
         "linux": "gcc", 
         "win": "mcl"
       }
+    }, 
+    "lib-blas": {
+      "local": "yes", 
+      "name": "BLAS library", 
+      "skip_default": "yes", 
+      "sort": 30, 
+      "tags": "lib,blas,openblas"
     }, 
     "lib-gflags": {
       "force_env_init": "yes", 
@@ -134,8 +131,8 @@
         "win": "yes"
       }, 
       "sort": 110, 
-      "tags": "lib,protobuf,v3.1.0"
-    },
+      "tags": "lib,protobuf,vtrunk"
+    }, 
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
@@ -145,7 +142,7 @@
         "win": "yes"
       }, 
       "sort": 115, 
-      "tags": "lib,protobuf-host,v3.1.0"
+      "tags": "lib,protobuf-host,vtrunk"
     }
   }, 
   "end_full_path": {
