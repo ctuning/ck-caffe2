@@ -163,10 +163,10 @@
     "windows", 
     "android"
   ], 
-  "package_extra_name": " (cpu)", 
+  "package_extra_name": " (eigen, cpu)", 
   "process_script": "install", 
   "soft_uoa": "54c5b933f17fb81c", 
-  "suggested_path": "lib-caffe2-master-cpu", 
+  "suggested_path": "lib-caffe2-master-eigen-cpu", 
   "tags": [
     "lib", 
     "facebook",
