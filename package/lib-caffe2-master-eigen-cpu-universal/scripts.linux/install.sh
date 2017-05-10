@@ -16,28 +16,26 @@
 echo "**************************************************************"
 echo "Preparing vars for Caffe 2 ..."
 
-OPENCV_DIR=${CK_ENV_LIB_OPENCV_JNI}
-if [ "${OPENCV_DIR}" == "" ]; then
-  OPENCV_DIR=${CK_ENV_LIB_OPENCV}/share/OpenCV
-fi
+# Get eigen
+cd ${INSTALL_DIR}/src
+git submodule update --init -- third_party/eigen
+git submodule update --init -- third_party/protobuf
 
 # Print about python
 if [ "${BUILD_PYTHON}" == "ON" ] ; then
+  git submodule update --init -- third_party/pybind11
+
   echo ""
   echo "You are compiling Caffe2 with Python support!"
   echo "To use it you need to set up CK env as following (after installation)":
   echo ""
-  echo "ck xset env tags=lib,caffe && . ./tmp-ck-env.bat && ipython2"
+  echo "ck xset env tags=lib,caffe2 ; . ./tmp-ck-env.bat ; ipython2"
   echo ""
   read -p "Press enter to continue"
 fi
 
 # Check extra stuff
 EXTRA_FLAGS=""
-
-# Get eigen
-cd ${INSTALL_DIR}/src
-git submodule update --init -- third_party/eigen
 
 cd ${INSTALL_DIR}/obj
 
