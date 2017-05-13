@@ -26,7 +26,7 @@
       "PACKAGE_URL": "https://github.com/caffe2/caffe2", 
       "PYTHON_EXE": "python", 
       "USE_CNMEM": "OFF", 
-      "USE_CUDA": "OFF", 
+      "USE_CUDA": "ON", 
       "USE_GFLAGS": "ON", 
       "USE_GLOG": "ON", 
       "USE_GLOO": "OFF", 
@@ -49,16 +49,6 @@
     "version": "trunk"
   }, 
   "deps": {
-    "python": {
-      "force_target_as_host": "yes", 
-      "local": "yes", 
-      "name": "python", 
-      "sort": 0, 
-      "only_for_target_os_tags": [
-        "windows"
-      ], 
-      "tags": "compiler,python"
-    }, 
     "cmake": {
       "force_target_as_host": "yes", 
       "local": "yes", 
@@ -78,6 +68,12 @@
         "win": "mcl"
       }
     }, 
+    "compiler-cuda": {
+      "local": "yes",
+      "name": "CUDA compiler >=7.0",
+      "sort": 11,
+      "tags": "compiler,lang-c-cuda"
+    },
     "lib-gflags": {
       "force_env_init": "yes", 
       "local": "yes", 
@@ -123,19 +119,6 @@
       "sort": 20, 
       "tags": "lib,opencv"
     }, 
-    "lib-protobuf": {
-      "local": "yes", 
-      "name": "ProtoBuf library", 
-      "only_for_target_os_tags": [
-        "android"
-      ], 
-      "skip_installed": {
-        "android": "yes", 
-        "win": "yes"
-      }, 
-      "sort": 110, 
-      "tags": "lib,protobuf,v3.2.0"
-    },
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
@@ -146,6 +129,16 @@
       }, 
       "sort": 115, 
       "tags": "lib,protobuf-host,v3.2.0"
+    }, 
+    "python": {
+      "force_target_as_host": "yes", 
+      "local": "yes", 
+      "name": "python", 
+      "only_for_target_os_tags": [
+        "windows"
+      ], 
+      "sort": 0, 
+      "tags": "compiler,python"
     }
   }, 
   "end_full_path": {
@@ -154,25 +147,20 @@
     "win": "install/lib/Caffe2_CPU.lib"
   }, 
   "need_cpu_info": "yes", 
-  "only_for_host_os_tags": [
+  "only_for_target_os_tags": [
     "linux", 
     "windows"
   ], 
-  "only_for_target_os_tags": [
-    "linux", 
-    "windows", 
-    "android"
-  ], 
-  "package_extra_name": " (eigen, cpu)", 
+  "package_extra_name": " (eigen, cuda)", 
   "process_script": "install", 
   "soft_uoa": "54c5b933f17fb81c", 
-  "suggested_path": "lib-caffe2-master-eigen-cpu", 
+  "suggested_path": "lib-caffe2-master-eigen-cuda", 
   "tags": [
     "lib", 
-    "facebook",
+    "facebook", 
     "caffe2", 
     "vmaster", 
-    "vcpu"
+    "vcuda"
   ], 
   "use_preprocess_scripts_from_another_entry": {
     "data_uoa": "fd44428fbc77f77f", 
