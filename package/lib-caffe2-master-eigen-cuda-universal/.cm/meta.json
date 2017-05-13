@@ -142,9 +142,8 @@
     }
   }, 
   "end_full_path": {
-    "android": "install/lib/libCaffe2_CPU.so", 
-    "linux": "install/lib/libCaffe2_CPU.so", 
-    "win": "install/lib/Caffe2_CPU.lib"
+    "linux": "install/lib/libCaffe2_GPU.so", 
+    "win": "install/lib/Caffe2_GPU.lib"
   }, 
   "need_cpu_info": "yes", 
   "only_for_target_os_tags": [
