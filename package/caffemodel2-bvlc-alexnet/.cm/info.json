@@ -1,0 +1,19 @@
+{
+  "backup_data_uid": "56aa9e005f933b89", 
+  "backup_module_uid": "1dc07ee0f4742028", 
+  "backup_module_uoa": "package", 
+  "control": {
+    "author": "Evan Shelhamer", 
+    "author_webpage": "https://github.com/shelhamer", 
+    "engine": "CK", 
+    "iso_datetime": "2017-05-14T16:53:12.965068", 
+    "license": "unrestricted (see readme.md)", 
+    "version": [
+      "1", 
+      "9", 
+      "1", 
+      "1"
+    ]
+  }, 
+  "data_name": "caffemodel2-bvlc-alexnet"
+}

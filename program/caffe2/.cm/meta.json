@@ -1,0 +1,52 @@
+{
+  "backup_data_uid": "883cc4dde19eb5b8", 
+  "data_name": "caffe2", 
+  "no_compile": "yes", 
+  "no_target_file": "yes", 
+  "only_for_target_os_tags": [
+    "windows", 
+    "linux"
+  ], 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "convert_caffe1_model_to_caffe2": {
+      "ignore_return_code": "no", 
+      "run_deps": {
+        "caffe2": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe2 lib", 
+          "sort": 5, 
+          "tags": "lib,caffe2"
+        },
+        "caffemodel": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe model (net and weights)", 
+          "sort": 10, 
+          "tags": "caffemodel"
+        }
+      }, 
+      "run_time": {
+        "pre_process_via_ck": {"script_name":"preprocess"},
+        "run_cmd_main": "python $<<CK_ENV_LIB_CAFFE2>>$/caffe2/python/caffe_translator.py $<<CK_CAFFE_MODEL_TOPOLOGY_FILE>>$ $<<CK_ENV_MODEL_CAFFE_WEIGHTS>>$", 
+        "run_correctness_output_files": [], 
+        "run_input_files": [
+          "$<<CK_CAFFE_MODEL_FILE>>$", 
+          "$<<CK_ENV_MODEL_CAFFE_WEIGHTS>>$", 
+          "imagenet_mean.binaryproto", 
+          "synset_words.txt"
+        ], 
+        "run_output_files": [
+        ]
+      }
+    } 
+  }, 
+  "skip_tmp_deps": "yes", 
+  "tags": [
+    "program", 
+    "caffe2"
+  ], 
+  "version": "1.0.0"
+}
