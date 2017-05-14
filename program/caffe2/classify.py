@@ -21,10 +21,10 @@ def rescale(img, input_height, input_width):
         imgScaled = skimage.transform.resize(img, (res, input_height))
     if(aspect == 1):
         imgScaled = skimage.transform.resize(img, (input_width, input_height))
-    pyplot.figure()
-    pyplot.imshow(imgScaled)
-    pyplot.axis('on')
-    pyplot.title('Rescaled image')
+#    pyplot.figure()
+#    pyplot.imshow(imgScaled)
+#    pyplot.axis('on')
+#    pyplot.title('Rescaled image')
     print("New image shape:" + str(imgScaled.shape) + " in HWC")
     return imgScaled
 
@@ -38,6 +38,9 @@ import os
 from caffe2.python import core, workspace
 import urllib2
 import json
+
+#import matplotlib
+#matplotlib.use('Agg')
 
 IMAGE_LOCATION = sys.argv[4]
 
@@ -56,21 +59,21 @@ img = skimage.img_as_float(skimage.io.imread(IMAGE_LOCATION)).astype(np.float32)
 img = rescale(img, INPUT_IMAGE_SIZE, INPUT_IMAGE_SIZE)
 img = crop_center(img, INPUT_IMAGE_SIZE, INPUT_IMAGE_SIZE)
 print "After crop: " , img.shape
-pyplot.figure()
-pyplot.imshow(img)
-pyplot.axis('on')
-pyplot.title('Cropped')
+#pyplot.figure()
+#pyplot.imshow(img)
+#pyplot.axis('on')
+#pyplot.title('Cropped')
 
 # switch to CHW
 img = img.swapaxes(1, 2).swapaxes(0, 1)
-pyplot.figure()
-for i in range(3):
-    # For some reason, pyplot subplot follows Matlab's indexing
-    # convention (starting with 1). Well, we'll just follow it...
-    pyplot.subplot(1, 3, i+1)
-    pyplot.imshow(img[i])
-    pyplot.axis('off')
-    pyplot.title('RGB channel %d' % (i+1))
+#pyplot.figure()
+#for i in range(3):
+#    # For some reason, pyplot subplot follows Matlab's indexing
+#    # convention (starting with 1). Well, we'll just follow it...
+#    pyplot.subplot(1, 3, i+1)
+#    pyplot.imshow(img[i])
+#    pyplot.axis('off')
+#    pyplot.title('RGB channel %d' % (i+1))
 
 # switch to BGR
 img = img[(2, 1, 0), :, :]

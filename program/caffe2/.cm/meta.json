@@ -8,6 +8,7 @@
     "linux"
   ], 
   "print_files_after_run": [
+    "stderr2.log",
     "stderr.log"
   ], 
   "process_in_tmp": "yes", 
