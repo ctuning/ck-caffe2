@@ -15,13 +15,7 @@ rem INSTALL_DIR
 rem get eigen and protobuf
 cd /d %INSTALL_DIR%\src
 git submodule update --init -- third_party\eigen
-
-rem Get protobuf from CK and copy here
-if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
- xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%\* third_party\protobuf\
-)
-
-rem git submodule update --init -- third_party\protobuf
+git submodule update --init -- third_party\protobuf
 
 if "%BUILD_PYTHON%" == "ON" (
   git submodule update --init -- third_party\pybind11
@@ -30,26 +24,26 @@ if "%BUILD_PYTHON%" == "ON" (
   echo You are compiling Caffe2 with Python support!
   echo To use it you need to set up CK env as following ^(after installation^)^:
   echo.
-  echo "ck xset env tags=lib,caffe2 & call tmp-ck-env.bat & ipython2"
+  echo ck xset env tags=lib,caffe2 & call tmp-ck-env.bat & ipython2
   echo.
   set /p id="Press enter to continue"
 )
 
 cd /d %INSTALL_DIR%\obj
 
-rem echo **************************************************************
-rem echo Building protobuf for Caffe 2 ...
+echo **************************************************************
+echo Building protobuf for Caffe 2 ...
 
-rem cmake %INSTALL_DIR%\src\third_party\protobuf\cmake ^
-rem   -G"%CK_CMAKE_GENERATOR%" ^
-rem   -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
-rem   -DCMAKE_INSTALL_PREFIX=. ^
-rem   -Dprotobuf_BUILD_TESTS=OFF ^
-rem   -DCMAKE_BUILD_TYPE=Debug
-rem 
-rem msbuild INSTALL.vcxproj
+cmake %INSTALL_DIR%\src\third_party\protobuf\cmake ^
+  -G"%CK_CMAKE_GENERATOR%" ^
+  -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
+  -DCMAKE_INSTALL_PREFIX=. ^
+  -Dprotobuf_BUILD_TESTS=OFF ^
+  -DCMAKE_BUILD_TYPE=Debug
 
-rem exit /b 1
+msbuild INSTALL.vcxproj
+
+exit /b 1
 
 echo **************************************************************
 echo Preparing vars for Caffe 2 ...
@@ -82,7 +76,7 @@ set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DBUILD_SHARED_LIBS=OFF ^
  -DUSE_OPENMP=%USE_OPENMP% ^
  -DBUILD_PYTHON=%BUILD_PYTHON% ^
- -DBUILD_BINARY=ON ^
+ -DBUILD_BINARY=OFF ^
  -DBUILD_TEST=%BUILD_TEST% ^
  -DPROTOBUF_PROTOC_EXECUTABLE="%CK_ENV_LIB_PROTOBUF_HOST%\bin\protoc.exe" ^
  -DGFLAGS_INCLUDE_DIR="%CK_ENV_LIB_GFLAGS_INCLUDE%" ^

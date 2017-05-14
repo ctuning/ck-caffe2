@@ -16,7 +16,13 @@ rem get eigen and protobuf
 cd /d %INSTALL_DIR%\src
 git submodule update --init -- third_party\eigen
 git submodule update --init -- third_party\cub
-git submodule update --init -- third_party\protobuf
+
+rem Get protobuf from CK and copy here
+if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
+ xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%\* third_party\protobuf\
+)
+
+rem git submodule update --init -- third_party\protobuf
 
 if "%BUILD_PYTHON%" == "ON" (
   git submodule update --init -- third_party\pybind11
@@ -25,7 +31,7 @@ if "%BUILD_PYTHON%" == "ON" (
   echo You are compiling Caffe2 with Python support!
   echo To use it you need to set up CK env as following ^(after installation^)^:
   echo.
-  echo ck xset env tags=lib,caffe2 & call tmp-ck-env.bat & ipython2
+  echo "ck xset env tags=lib,caffe2 & call tmp-ck-env.bat & ipython2"
   echo.
   set /p id="Press enter to continue"
 )
