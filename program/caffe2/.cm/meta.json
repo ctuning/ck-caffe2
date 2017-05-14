@@ -7,9 +7,66 @@
     "windows", 
     "linux"
   ], 
+  "print_files_after_run": [
+    "stderr.log"
+  ], 
   "process_in_tmp": "yes", 
   "program": "yes", 
   "run_cmds": {
+    "classify": {
+      "dataset_tags": [
+        "image", 
+        "jpeg", 
+        "dataset"
+      ], 
+      "ignore_return_code": "no", 
+      "run_deps": {
+        "caffe2": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe2 lib", 
+          "sort": 5, 
+          "tags": "lib,caffe2"
+        },
+        "caffemodel2": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe2 model (net and weights)", 
+          "sort": 40, 
+          "tags": "caffemodel2"
+        }
+      }, 
+      "run_time": {
+        "run_cmd_main": "python ../classify.py $<<CK_ENV_MODEL_CAFFE2_WEIGHTS>>$ $<<CK_ENV_MODEL_CAFFE2>>$/predict_net.pb ../alexnet_codes $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_out1": "stderr.log", 
+        "run_cmd_out2": "stderr2.log" 
+      }
+    }, 
+    "classify_ck_ai_api": {
+      "ignore_return_code": "no", 
+      "run_deps": {
+        "caffe2": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe2 lib", 
+          "sort": 5, 
+          "tags": "lib,caffe2"
+        },
+        "caffemodel2": {
+          "force_target_as_host": "yes", 
+          "local": "yes", 
+          "name": "Caffe2 model (net and weights)", 
+          "sort": 40, 
+          "tags": "caffemodel2"
+        }
+      }, 
+      "run_time": {
+        "run_cmd_main": "python ../classify.py $<<CK_ENV_MODEL_CAFFE2_WEIGHTS>>$ $<<CK_ENV_MODEL_CAFFE2>>$/predict_net.pb ../alexnet_codes $<<CK_AI_API_IMAGE_FILE>>$", 
+        "run_cmd_out1": "stderr.log", 
+        "run_cmd_out2": "stderr2.log", 
+        "run_correctness_output_files": []
+      }
+    }, 
     "convert_caffe1_model_to_caffe2": {
       "ignore_return_code": "no", 
       "run_deps": {
