@@ -13,7 +13,7 @@ we decided to take an alternative approach.
 [![logo](http://cknowledge.org/images/ai-cloud-resize.png)](http://cKnowledge.org/ai)
 
 We started adding existing AI frameworks such as [Caffe](https://github.com/dividiti/ck-caffe), 
-[Caffe2](https://github.com/ctuning/ck-caffe) and [TensorFlow](https://github.com/ctuning/ck-tensorflow) 
+[Caffe2](https://github.com/ctuning/ck-caffe2) and [TensorFlow](https://github.com/ctuning/ck-tensorflow) 
 to the non-intrusive open-source [Collective Knowledge workflow framework (CK)](https://github.com/ctuning/ck)
 to unify their customized installation across Linux, Windows, MacOS and Android, and provide 
 simple JSON API for common operations such as prediction and training (see [demo](http://cKnowledge.org/ai/ck-api-demo)).
