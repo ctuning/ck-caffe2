@@ -23,7 +23,7 @@ if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
 
 rem git submodule update --init -- third_party\protobuf
 
-if "%BUILD_PYTHON%" == "ON" (
+if "%CAFFE_BUILD_PYTHON%" == "ON" (
   git submodule update --init -- third_party\pybind11
 
   echo.
@@ -81,7 +81,7 @@ set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DUSE_GLOO=%USE_GLOO% ^
  -DBUILD_SHARED_LIBS=OFF ^
  -DUSE_OPENMP=%USE_OPENMP% ^
- -DBUILD_PYTHON=%BUILD_PYTHON% ^
+ -DBUILD_PYTHON=%CAFFE_BUILD_PYTHON% ^
  -DBUILD_BINARY=ON ^
  -DBUILD_TEST=%BUILD_TEST% ^
  -DPROTOBUF_PROTOC_EXECUTABLE="%CK_ENV_LIB_PROTOBUF_HOST%\bin\protoc.exe" ^

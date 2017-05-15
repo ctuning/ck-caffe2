@@ -22,7 +22,7 @@ git submodule update --init -- third_party/eigen
 git submodule update --init -- third_party/protobuf
 
 # Print about python
-if [ "${BUILD_PYTHON}" == "ON" ] ; then
+if [ "${CAFFE_BUILD_PYTHON}" == "ON" ] ; then
   git submodule update --init -- third_party/pybind11
 
   echo ""
@@ -66,7 +66,7 @@ cmake -DCMAKE_BUILD_TYPE=${CK_ENV_CMAKE_BUILD_TYPE:-Release} \
       -DUSE_GLOO=${USE_GLOO} \
       -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS} \
       -DUSE_OPENMP=${USE_OPENMP} \
-      -DBUILD_PYTHON=${BUILD_PYTHON} \
+      -DBUILD_PYTHON=${CAFFE_BUILD_PYTHON} \
       -DBUILD_BINARY=${BUILD_BINARY} \
       -DBUILD_TEST=${BUILD_TEST} \
       -DGFLAGS_INCLUDE_DIR="${CK_ENV_LIB_GFLAGS_INCLUDE}" \

@@ -5,7 +5,7 @@
     "git_src_dir": "src", 
     "install_env": {
       "BUILD_BINARY": "ON", 
-      "BUILD_PYTHON": "OFF", 
+      "CAFFE_BUILD_PYTHON": "OFF", 
       "BUILD_SHARED_LIBS": "ON", 
       "BUILD_TEST": "OFF", 
       "CMAKE_CONFIG": "Release", 
