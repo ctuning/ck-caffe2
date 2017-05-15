@@ -43,7 +43,6 @@ $ ck pull repo:ck-caffe2
 
 $ ck install package:lib-caffe-bvlc-master-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
 $ ck install package:lib-caffe2-master-eigen-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
-
 ```
 
 You can find detailed instructions to install Caffe (CPU, CUDA, OpenCL versions) via CK on Ubuntu, Gentoo, Yocto, Raspberry Pi, Odroid, Windows and Android [here](https://github.com/dividiti/ck-caffe/wiki/Installation). Caffe2 instructions are coming soon!
@@ -89,9 +88,10 @@ hardware price and other costs
 We are working with the community to unify and crowdsource performance analysis 
 and tuning of various DNN frameworks (or any realistic workload) 
 using Collective Knowledge Technology:
-* [CK-TensorFlow](https://github.com/dividiti/ck-tensorflow)
 * [Android app for DNN crowd-benchmarking and crowd-tuning](https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments)
-* [CK-powered ARM workload automation](https://github.com/ctuning/ck-wa)
+* [CK-TensorFlow](https://github.com/ctuning/ck-tensorflow)
+* [CK-Caffe](https://github.com/dividiti/ck-caffe)
+* [CK-Caffe2](https://github.com/ctuning/ck-caffe2)
 
 We continue gradually exposing various design and optimization
 choices including full parameterization of existing models.
