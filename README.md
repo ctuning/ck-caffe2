@@ -14,9 +14,11 @@ we decided to take an alternative approach.
 
 We started adding existing AI frameworks such as [Caffe](https://github.com/dividiti/ck-caffe), 
 [Caffe2](https://github.com/ctuning/ck-caffe2) and [TensorFlow](https://github.com/ctuning/ck-tensorflow) 
-to the non-intrusive open-source [Collective Knowledge workflow framework (CK)](https://github.com/ctuning/ck)
-to unify their customized installation across Linux, Windows, MacOS and Android (rather than
-using ad-hoc scripts), and provide simple JSON API for common operations such as prediction and training (see [demo](http://cKnowledge.org/ai/ck-api-demo)).
+to the non-intrusive open-source [Collective Knowledge workflow framework (CK)](https://github.com/ctuning/ck).
+CK allows to plug in various versions of AI frameworks together with libraries, compilers, tools, models
+and data sets as unified and reusable components with JSON API, automate and customize their 
+installation across Linux, Windows, MacOS and Android (rather than using ad-hoc scripts) 
+and provide simple JSON API for common operations such as prediction and training (see [demo](http://cKnowledge.org/ai/ck-api-demo)).
 
 At the same time, CK allows us to continuously optimize ([1](https://arxiv.org/abs/1506.06256), [2](http://doi.acm.org/10.1145/2909437.2909449))
 the whole AI stack (SW/HW/models) across diverse platforms from mobile devices and IoT to supercomputers 
