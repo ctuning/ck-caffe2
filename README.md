@@ -29,8 +29,8 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
 ## Authors/contributors
 
-* Grigori Fursin, [dividiti](http://dividiti.com) / [cTuning foundation](http://ctuning.org)
-* Anton Lokhmotov, [dividiti](http://dividiti.com)
+* [Grigori Fursin](http://fursin.net/research.html), dividiti / cTuning foundation
+* [Anton Lokhmotov](http://dividiti.com), dividiti
 
 ## Example of Caffe and Caffe2 unified installation on Ubuntu via CK
 
