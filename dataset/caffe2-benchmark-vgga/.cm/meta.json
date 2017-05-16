@@ -3,7 +3,7 @@
     "dataset",
     "benchmark",
     "caffe2",
-    "vgg",
+    "vgga",
     "vcpu",
     "vcuda"
   ]
