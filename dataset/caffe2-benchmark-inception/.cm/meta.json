@@ -1,0 +1,10 @@
+{
+  "tags":[
+    "dataset",
+    "benchmark",
+    "caffe2",
+    "inception",
+    "vcpu",
+    "vcuda"
+  ]
+}
