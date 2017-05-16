@@ -8,7 +8,7 @@
     "linux"
   ], 
   "print_files_after_run": [
-    "stderr2.log",
+    "stderr2.log", 
     "stderr.log"
   ], 
   "process_in_tmp": "yes", 
@@ -28,19 +28,25 @@
           "name": "Caffe2 lib", 
           "sort": 5, 
           "tags": "lib,caffe2"
-        },
+        }, 
         "caffemodel2": {
           "force_target_as_host": "yes", 
           "local": "yes", 
           "name": "Caffe2 model (net and weights)", 
           "sort": 40, 
           "tags": "caffemodel2"
+        }, 
+        "python": {
+          "local": "yes", 
+          "name": "Python", 
+          "sort": 0, 
+          "tags": "compiler,python"
         }
       }, 
       "run_time": {
         "run_cmd_main": "python ../classify.py $<<CK_ENV_MODEL_CAFFE2_WEIGHTS>>$ $<<CK_ENV_MODEL_CAFFE2>>$/predict_net.pb ../alexnet_codes $#dataset_path#$$#dataset_filename#$", 
         "run_cmd_out1": "stderr.log", 
-        "run_cmd_out2": "stderr2.log" 
+        "run_cmd_out2": "stderr2.log"
       }
     }, 
     "classify_ck_ai_api": {
@@ -52,7 +58,7 @@
           "name": "Caffe2 lib", 
           "sort": 5, 
           "tags": "lib,caffe2"
-        },
+        }, 
         "caffemodel2": {
           "force_target_as_host": "yes", 
           "local": "yes", 
@@ -62,7 +68,7 @@
         }
       }, 
       "run_time": {
-        "run_cmd_main": "python ../classify.py $<<CK_ENV_MODEL_CAFFE2_WEIGHTS>>$ $<<CK_ENV_MODEL_CAFFE2>>$/predict_net.pb ../alexnet_codes $<<CK_AI_API_IMAGE_FILE>>$", 
+        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../classify.py $<<CK_ENV_MODEL_CAFFE2_WEIGHTS>>$ $<<CK_ENV_MODEL_CAFFE2>>$/predict_net.pb ../alexnet_codes $<<CK_AI_API_IMAGE_FILE>>$", 
         "run_cmd_out1": "stderr.log", 
         "run_cmd_out2": "stderr2.log", 
         "run_correctness_output_files": []
@@ -77,18 +83,26 @@
           "name": "Caffe2 lib", 
           "sort": 5, 
           "tags": "lib,caffe2"
-        },
+        }, 
         "caffemodel": {
           "force_target_as_host": "yes", 
           "local": "yes", 
           "name": "Caffe model (net and weights)", 
           "sort": 10, 
           "tags": "caffemodel"
+        }, 
+        "python": {
+          "local": "yes", 
+          "name": "Python", 
+          "sort": 0, 
+          "tags": "compiler,python"
         }
       }, 
       "run_time": {
-        "pre_process_via_ck": {"script_name":"preprocess"},
-        "run_cmd_main": "python $<<CK_ENV_LIB_CAFFE2>>$/caffe2/python/caffe_translator.py $<<CK_CAFFE_MODEL_TOPOLOGY_FILE>>$ $<<CK_ENV_MODEL_CAFFE_WEIGHTS>>$", 
+        "pre_process_via_ck": {
+          "script_name": "preprocess"
+        }, 
+        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ $<<CK_ENV_LIB_CAFFE2>>$/caffe2/python/caffe_translator.py $<<CK_CAFFE_MODEL_TOPOLOGY_FILE>>$ $<<CK_ENV_MODEL_CAFFE_WEIGHTS>>$", 
         "run_correctness_output_files": [], 
         "run_input_files": [
           "$<<CK_CAFFE_MODEL_FILE>>$", 
@@ -96,62 +110,88 @@
           "imagenet_mean.binaryproto", 
           "synset_words.txt"
         ], 
-        "run_output_files": [
-        ]
+        "run_output_files": []
       }
-    },
+    }, 
     "time_cpu": {
       "dataset_tags": [
-        "benchmark",
-        "caffe2",
-        "dataset",
+        "benchmark", 
+        "caffe2", 
+        "dataset", 
         "vcpu"
-      ],
-      "ignore_return_code": "no",
+      ], 
+      "ignore_return_code": "no", 
       "run_deps": {
         "lib-caffe2": {
-          "local": "yes",
-          "name": "Caffe2 library",
-          "sort": 10,
-          "tags": "lib,caffe2-cpu"
+          "local": "yes", 
+          "name": "Caffe2 library", 
+          "sort": 10, 
+          "tags": "lib,caffe2,vcpu"
+        }, 
+        "python": {
+          "local": "yes", 
+          "name": "Python", 
+          "sort": 0, 
+          "tags": "compiler,python"
         }
-      },
+      }, 
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmds": [
+          "python $#src_path_local#$postprocess_time.py"
+        ], 
+        "post_process_via_ck": "yes", 
+        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../convnet_benchmarks.py --ck_model $#dataset_path#$ --cpu --batch_size $<<BATCH_SIZE>>$", 
+        "run_cmd_out1": "stderr.log", 
+        "run_cmd_out2": "stderr2.log", 
         "run_output_files": [
           "stderr.log", 
-          "stderr2.log",
+          "stderr2.log", 
           "tmp-ck-timer.json"
-        ],
-        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../convnet_benchmarks.py --ck-model $#dataset_path#$$#dataset_filename#$ --batch_size $<<BATCH_SIZE>>$"
+        ]
       }
-    },
+    }, 
     "time_cuda": {
       "dataset_tags": [
-        "benchmark",
-        "caffe2",
-        "dataset",
+        "benchmark", 
+        "caffe2", 
+        "dataset", 
         "vcuda"
-      ],
-      "ignore_return_code": "no",
+      ], 
+      "ignore_return_code": "no", 
       "run_deps": {
         "lib-caffe2": {
-          "local": "yes",
-          "name": "Caffe2 library",
-          "sort": 10,
-          "tags": "lib,caffe2-cuda"
+          "local": "yes", 
+          "name": "Caffe2 library", 
+          "sort": 10, 
+          "tags": "lib,caffe2,vcuda"
+        }, 
+        "python": {
+          "local": "yes", 
+          "name": "Python", 
+          "sort": 0, 
+          "tags": "compiler,python"
         }
-      },
+      }, 
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmds": [
+          "python $#src_path_local#$postprocess_time.py"
+        ], 
+        "post_process_via_ck": "yes", 
+        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../convnet_benchmarks.py --ck_model $#dataset_path#$ --batch_size $<<BATCH_SIZE>>$", 
+        "run_cmd_out1": "stderr.log", 
+        "run_cmd_out2": "stderr2.log", 
         "run_output_files": [
           "stderr.log", 
-          "stderr2.log",
+          "stderr2.log", 
           "tmp-ck-timer.json"
-        ],
-        "run_cmd_main": "$<<CK_ENV_COMPILER_PYTHON_FILE>>$ ../convnet_benchmarks.py --ck-model $#dataset_path#$$#dataset_filename#$ --batch_size $<<BATCH_SIZE>>$"
+        ]
       }
     }
+  }, 
+  "run_vars": {
+    "BATCH_SIZE": 5
   }, 
   "skip_tmp_deps": "yes", 
   "tags": [

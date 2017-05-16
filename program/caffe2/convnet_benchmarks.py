@@ -520,7 +520,7 @@ def Benchmark(model_gen, arg):
         input_shape = [arg.batch_size, 3, input_size, input_size]
     else:
         input_shape = [arg.batch_size, input_size, input_size, 3]
-    if arg.model == "MLP":
+    if arg.ck_model == "caffe2-benchmark-inception":
         input_shape = [arg.batch_size, input_size]
 
     model.param_init_net.GaussianFill(
@@ -539,9 +539,9 @@ def Benchmark(model_gen, arg):
     )
 
     if arg.forward_only:
-        print('{}: running forward only.'.format(arg.model))
+        print('{}: running forward only.'.format(arg.ck_model))
     else:
-        print('{}: running forward-backward.'.format(arg.model))
+        print('{}: running forward-backward.'.format(arg.ck_model))
         model.AddGradientOperators(["loss"])
         AddParameterUpdate(model)
         if arg.order == 'NHWC':
@@ -562,10 +562,10 @@ def Benchmark(model_gen, arg):
     if arg.dump_model:
         # Writes out the pbtxt for benchmarks on e.g. Android
         with open(
-            "{0}_init_batch_{1}.pbtxt".format(arg.model, arg.batch_size), "w"
+            "{0}_init_batch_{1}.pbtxt".format(arg.ck_model, arg.batch_size), "w"
         ) as fid:
             fid.write(str(model.param_init_net.Proto()))
-        with open("{0}.pbtxt".format(arg.model, arg.batch_size), "w") as fid:
+        with open("{0}.pbtxt".format(arg.ck_model, arg.batch_size), "w") as fid:
             fid.write(str(model.net.Proto()))
 
     workspace.RunNetOnce(model.param_init_net)
@@ -584,6 +584,7 @@ def GetArgumentParser():
         help="The batch size."
     )
     parser.add_argument("--model", type=str, help="The model to benchmark.")
+    parser.add_argument("--ck_model", type=str, help="The CK model to benchmark.")
     parser.add_argument(
         "--order",
         type=str,
@@ -642,7 +643,7 @@ def GetArgumentParser():
 if __name__ == '__main__':
     args = GetArgumentParser().parse_args()
     if (
-        not args.batch_size or not args.model or not args.order
+        not args.batch_size or not args.ck_model or not args.order
     ):
         GetArgumentParser().print_help()
     else:
@@ -652,11 +653,15 @@ if __name__ == '__main__':
             (['--caffe2_htrace_span_log_path=' + args.htrace_span_log_path]
                 if args.htrace_span_log_path else []))
 
-        model_map = {
-            'AlexNet': AlexNet,
-            'OverFeat': OverFeat,
-            'VGGA': VGGA,
-            'Inception': Inception,
-            'MLP': MLP,
+        #FGG: convert CK model to model
+        ck_model_map = {
+            'caffe2-benchmark-alexnet': AlexNet,
+            'caffe2-benchmark-overfeat': OverFeat,
+            'caffe2-benchmark-vgga': VGGA,
+            'caffe2-benchmark-inception': Inception,
+            'caffe2-benchmark-mlp': MLP,
         }
-        Benchmark(model_map[args.model], args)
+
+        import os
+        args.ck_model=os.path.basename(args.ck_model[:-1])
+        Benchmark(ck_model_map[args.ck_model], args)
