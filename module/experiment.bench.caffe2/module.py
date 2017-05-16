@@ -209,7 +209,7 @@ def crowdsource(i):
     tp=['cpu', 'cuda'] #, 'opencl']
 
     ck.out(line)
-    ck.out('Select TensorFlow library type:')
+    ck.out('Select Caffe2 library type:')
     ck.out('')
     r=ck.access({'action':'select_list',
                  'module_uoa':cfg['module_deps']['choice'],
@@ -220,7 +220,7 @@ def crowdsource(i):
     # Get extra platform features if "cuda" or "opencl"
     run_cmd='time_'+xtp
 
-    tags='lib,tensorflow,tensorflow-'+xtp
+    tags='lib,caffe2,caffe2-'+xtp
     gpgpu_uid=''
     if xtp=='cuda' or xtp=='opencl':
         r=ck.access({'action':'detect',
@@ -240,7 +240,7 @@ def crowdsource(i):
             gpgpu_name=gpgpus[0].get('gpgpu',{}).get('name','')
             gpgpu_uid=gpgpus[0].get('gpgpu_uoa','')
 
-    # Get deps from TensorFlow program
+    # Get desc of Caffe2 program
     r=ck.access({'action':'load',
                  'module_uoa':cfg['module_deps']['program'],
                  'data_uoa':'tensorflow'})
@@ -260,7 +260,7 @@ def crowdsource(i):
     ii={'action':'pipeline',
 
         'module_uoa':cfg['module_deps']['program'],
-        'data_uoa':'tensorflow',
+        'data_uoa':'caffe2',
 
         'prepare':'yes',
 
@@ -297,7 +297,7 @@ def crowdsource(i):
     ydeps=deps
 
     # Check saved deps (if from bin package)
-    xk=deps['lib-tensorflow']
+    xk=deps['lib-caffe2']
     pfull=xk.get('cus',{}).get('full_path','')
     pbin=os.path.dirname(os.path.dirname(os.path.dirname(pfull)))
     if pbin!='':
@@ -315,9 +315,8 @@ def crowdsource(i):
           ydeps=copy.deepcopy(deps)
           dname=deps['lib-caffe']['dict']['data_name']
 
-          ydeps['lib-tensorflow']['dict']=copy.deepcopy(rx['dict'])
-          ydeps['lib-tensorflow']['dict']['data_name']=dname
-
+          ydeps['lib-caffe2']['dict']=copy.deepcopy(rx['dict'])
+          ydeps['lib-caffe2']['dict']['data_name']=dname
 
     state=rr['state']
     tmp_dir=state['tmp_dir']
@@ -335,7 +334,7 @@ def crowdsource(i):
           'os_name':os_name,
           'plat_name':plat_name,
           'gpu_name':gpu_name,
-          'tensorflow_type':xtp,
+          'caffe2_type':xtp,
           'gpgpu_name':gpgpu_name,
           'cmd_key':run_cmd,
           'dataset_uoa':ds,
@@ -362,14 +361,14 @@ def crowdsource(i):
 
     # versions of engine sub deps
     dvers={}
-    mdep=ydeps.get('lib-tensorflow',{})
+    mdep=ydeps.get('lib-caffe2',{})
     mdeps=mdep.get('dict',{}).get('deps',{})
 
     for k in mdeps:
         dvers[k]=mdeps[k].get('ver','')
 
     # Checking engine name
-    d_engine=xdeps.get('lib-tensorflow',{})
+    d_engine=xdeps.get('lib-caffe2',{})
     d_engine_name=d_engine.get('data_name','')
     d_engine_package_uoa=d_engine.get('package_uoa','')
     d_engine_ver=d_engine.get('ver','')
@@ -612,10 +611,9 @@ def show(i):
     hi_uid=i.get('highlight_uid','')
 
 #    h='<hr>\n'
+    h=''
     h+='<center>\n'
     h+='\n\n<script language="JavaScript">function copyToClipboard (text) {window.prompt ("Copy to clipboard: Ctrl+C, Enter", text);}</script>\n\n' 
-
-#    h+='<h2>Aggregated results from TensorFlow crowd-benchmarking (time, accuracy, energy, cost, ...)</h2>\n'
 
     h+=hextra
 
@@ -811,7 +809,7 @@ def show(i):
 
         params=d.get('choices',{}).get('params',{}).get('params',{})
 
-        tp=meta.get('tensorflow_type','')
+        tp=meta.get('caffe2_type','')
         nn=meta.get('nn_type','')
 
         plat_name=meta.get('plat_name','')
@@ -834,7 +832,7 @@ def show(i):
 
         xdeps=meta.get('xdeps',{})
 
-        d_engine=xdeps.get('lib-tensorflow',{})
+        d_engine=xdeps.get('lib-caffe2',{})
         d_engine_name=d_engine.get('data_name','')
         d_engine_package_uoa=d_engine.get('package_uoa','')
         d_engine_ver=d_engine.get('ver','')
@@ -1086,6 +1084,6 @@ def replay(i):
     # Run locally, i.e. do not share stats unless requested ...
 
     i['action']='crowdsource'
-    i['module_uoa']=cfg['module_deps']['experiment.bench.tensorflow']
+    i['module_uoa']=cfg['module_deps']['experiment.bench.caffe2']
 
     return ck.access(i)
