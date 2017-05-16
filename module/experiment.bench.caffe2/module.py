@@ -510,7 +510,7 @@ def crowdsource(i):
 
 
     # Push statistical characteristics
-    x0=lsaf.get("##characteristics#run#time_fwbw_norm#min",None)
+    x0=lsaf.get("##characteristics#run#time_fwbw_s#min",None)
 
     if x0!=None and x0>0:
        if o=='con':
@@ -535,7 +535,7 @@ def crowdsource(i):
 
        # Push statistical characteristics
 
-       dmin={"##characteristics#run#time_fwbw_norm#min":x0}
+       dmin={"##characteristics#run#time_fwbw_s#min":x0}
 
        if o=='con':
           ck.out('')
@@ -777,7 +777,7 @@ def show(i):
     # Load min stat
     for q in plst:
         pmin=os.path.join(q['path'],ffmin)
-        dx={'##characteristics#run#time_fwbw_norm#min':1e99}
+        dx={'##characteristics#run#time_fwbw_s#min':1e99}
 
         if os.path.isfile(pmin):
            rx=ck.load_json_file({'json_file':pmin})
@@ -785,9 +785,9 @@ def show(i):
               dx=rx['dict']
 
               # Fix
-              x=dx.get('##characteristics#run#time_fwbw_norm#min','')
+              x=dx.get('##characteristics#run#time_fwbw_s#min','')
               if x==None or x=='' or x>50000: 
-                 dx['##characteristics#run#time_fwbw_norm#min']=1e99
+                 dx['##characteristics#run#time_fwbw_s#min']=1e99
                  if q.get('meta',{}).get('state',{}).get('fail_reason','')=='':
                     q['meta']['state']['fail']='yes'
                     q['meta']['state']['fail_reason']='strange timing'
@@ -795,7 +795,7 @@ def show(i):
         q['min_stat']=dx
 
     # Sort
-    splst=sorted(plst, key=lambda x: x.get('min_stat',{}).get('##characteristics#run#time_fwbw_norm#min',0))
+    splst=sorted(plst, key=lambda x: x.get('min_stat',{}).get('##characteristics#run#time_fwbw_s#min',0))
 
     for q in splst:
         ix+=1
@@ -882,11 +882,11 @@ def show(i):
         x=''
 
         # Check if has stats
-        x0=dstat.get("##characteristics#run#time_fwbw_norm#min",None)
-        x0e=dstat.get("##characteristics#run#time_fwbw_norm#exp",None)
-        x1=dstat.get("##characteristics#run#time_fwbw_norm#center",None)
-        xr=dstat.get("##characteristics#run#time_fwbw_norm#repeats",None)
-        x2=dstat.get("##characteristics#run#time_fwbw_norm#halfrange",None)
+        x0=dstat.get("##characteristics#run#time_fwbw_s#min",None)
+        x0e=dstat.get("##characteristics#run#time_fwbw_s#exp",None)
+        x1=dstat.get("##characteristics#run#time_fwbw_s#center",None)
+        xr=dstat.get("##characteristics#run#time_fwbw_s#repeats",None)
+        x2=dstat.get("##characteristics#run#time_fwbw_s#halfrange",None)
         x=''
         if x0!=None:
             x='<b>'+('%.3f'%x0)+'&nbsp;</b>\n'
@@ -899,11 +899,11 @@ def show(i):
 
         h+='   <td '+ha+'>'+x+'</td>\n'
 
-        x0=dstat.get("##characteristics#run#time_fw_norm#min",None)
-        x0e=dstat.get("##characteristics#run#time_fw_norm#exp",None)
-        x1=dstat.get("##characteristics#run#time_fw_norm#center",None)
-        xr=dstat.get("##characteristics#run#time_fw_norm#repeats",None)
-        x2=dstat.get("##characteristics#run#time_fw_norm#halfrange",None)
+        x0=dstat.get("##characteristics#run#time_fw_s#min",None)
+        x0e=dstat.get("##characteristics#run#time_fw_s#exp",None)
+        x1=dstat.get("##characteristics#run#time_fw_s#center",None)
+        xr=dstat.get("##characteristics#run#time_fw_s#repeats",None)
+        x2=dstat.get("##characteristics#run#time_fw_s#halfrange",None)
         x=''
         if x0!=None:
             x='<b>'+('%.3f'%x0)+'&nbsp;</b>\n'
