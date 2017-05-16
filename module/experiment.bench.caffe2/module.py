@@ -15,8 +15,8 @@ ck=None # Will be updated by CK (initialized CK kernel)
 
 line='================================================================'
 
-ck_url='http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=bca33b04b438d756'
-ck_url1='http://cknowledge.org/repo/web.php?wcid=bca33b04b438d756:'
+ck_url='http://cknowledge.org/repo/web.php?native_action=show&native_module_uoa=program.optimization&scenario=75114c4997197226'
+ck_url1='http://cknowledge.org/repo/web.php?wcid=75114c4997197226:'
 
 ffstat='ck-stat-flat-characteristics.json'
 ffmin='ck-stat-flat-min.json'
@@ -35,13 +35,14 @@ onchange='document.'+form_name+'.submit();'
 #hextra+='<br>\n'
 
 hextra='<i><center>\n'
-hextra+='This is a community-driven R&D: \n'
-hextra+=' [ <a href="http://cKnowledge.org/ai">collaborative AI optimization</a> ], '
+hextra+=' [ <a href="http://cKnowledge.org/ai">Collaborative unification of AI</a> ], '
+hextra+=' [ <a href="https://github.com/ctuning/ck-caffe">CK-Caffe2</a> / <a href="https://github.com/dividiti/ck-caffe">CK-Caffe</a> ], '
 hextra+=' [ <a href="https://github.com/ctuning/ck-tensorflow">CK-Tensorflow</a> ], '
+hextra+=' [ <a href="https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments&hl=en">Android app</a> ], '
 hextra+=' [ <a href="https://en.wikipedia.org/wiki/Collective_Knowledge_(software)">CK intro</a>, \n'
-hextra+='CK papers: <a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">1</a> and \n'
-hextra+='<a href="https://arxiv.org/abs/1506.06256">2</a>; \n'
-hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube intro</a> ] \n'
+hextra+='<a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">vision</a> and \n'
+hextra+='<a href="https://arxiv.org/abs/1506.06256">crowd-tuning</a>; \n'
+hextra+='<a href="https://www.youtube.com/watch?v=Q94yWxXUMP0">YouTube lecture</a> ] \n'
 hextra+='</center></i>\n'
 hextra+='<br>\n'
 
@@ -610,11 +611,11 @@ def show(i):
 
     hi_uid=i.get('highlight_uid','')
 
-    h='<hr>\n'
+#    h='<hr>\n'
     h+='<center>\n'
     h+='\n\n<script language="JavaScript">function copyToClipboard (text) {window.prompt ("Copy to clipboard: Ctrl+C, Enter", text);}</script>\n\n' 
 
-    h+='<h2>Aggregated results from TensorFlow crowd-benchmarking (time, accuracy, energy, cost, ...)</h2>\n'
+#    h+='<h2>Aggregated results from TensorFlow crowd-benchmarking (time, accuracy, energy, cost, ...)</h2>\n'
 
     h+=hextra
 
