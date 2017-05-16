@@ -1,5 +1,6 @@
 2017.05.16 - added first prototype of benchmarking via CK
            - unified benchmarking
+           - started adding crowdbenchmarking via CK
 
 2017.05.14 - added support for Caffe2 unified image classification via CK
 
