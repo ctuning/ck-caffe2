@@ -47,7 +47,7 @@ hextra+='</center></i>\n'
 hextra+='<br>\n'
 
 
-selector=[{'name':'Type', 'key':'tensorflow_type'},
+selector=[{'name':'Type', 'key':'caffe2_type'},
           {'name':'DNN engine', 'key':'dnn_engine_name'},
           {'name':'Network', 'key':'dataset_uoa'},
           {'name':'Platform', 'key':'plat_name', 'new_line':'yes'},
@@ -164,12 +164,12 @@ def crowdsource(i):
        ii=copy.deepcopy(i)
        ii['action']='initialize'
        ii['module_uoa']=cfg['module_deps']['program.optimization']
-       ii['data_uoa']='tensorflow'
+       ii['data_uoa']='caffe2'
        ii['exchange_repo']=er
        ii['exchange_subrepo']=esr
        ii['skip_welcome']='yes'
        ii['skip_log_wait']='yes'
-       ii['crowdtuning_type']='tensorflow-crowd-benchmarking'
+       ii['crowdtuning_type']='caffe2-crowd-benchmarking'
        r=ck.access(ii)
        if r['return']>0: return r
 
