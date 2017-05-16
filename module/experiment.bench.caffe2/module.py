@@ -899,6 +899,15 @@ def show(i):
 
         h+='   <td '+ha+'>'+x+'</td>\n'
 
+#        if fail!='yes' and x0!=None and duid!=hi_uid:
+#            bgraph['0'].append([ix,x0])
+#            if hi_uid!='': bgraph['1'].append([ix,None])
+
+        if fail=='yes': x0=0
+        bgraph['0'].append([ix,x0])
+        if fail!='yes' and x0!=None and duid!=hi_uid:
+            if hi_uid!='': bgraph['1'].append([ix,None])
+
         x0=dstat.get("##characteristics#run#time_fw_s#min",None)
         x0e=dstat.get("##characteristics#run#time_fw_s#exp",None)
         x1=dstat.get("##characteristics#run#time_fw_s#center",None)
@@ -915,15 +924,6 @@ def show(i):
             x+='<br><i>'+str(xr)+'&nbsp;repetitions</i>\n'
 
         h+='   <td '+ha+'>'+x+'</td>\n'
-
-#        if fail!='yes' and x0!=None and duid!=hi_uid:
-#            bgraph['0'].append([ix,x0])
-#            if hi_uid!='': bgraph['1'].append([ix,None])
-
-        if fail=='yes': x0=0
-        bgraph['0'].append([ix,x0])
-        if fail!='yes' and x0!=None and duid!=hi_uid:
-            if hi_uid!='': bgraph['1'].append([ix,None])
 
         # Check all characteristics
         x=''
