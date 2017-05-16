@@ -11,7 +11,7 @@
     }
   }, 
   "copyright": "See CK COPYRIGHT.txt for copyright details",
-  "desc": "caffe2 benchmarking with unified CK API",
+  "desc": "crowd-benchmark DNN libraries and models (Caffe2)", 
   "developer": "Grigori Fursin",
   "developer_email": "Grigori.Fursin@cTuning.org",
   "developer_webpage": "http://fursin.net",
@@ -45,6 +45,6 @@
     "experiments", 
     "program benchmarking", 
     "program optimization", 
-    "caffe"
+    "caffe2"
   ]
 }
