@@ -96,14 +96,13 @@ $ ck crowdbench caffe2 --env.BATCH_SIZE=5 --user=i_want_to_ack_my_contribution
 ```
 
 Performance results will be aggregated in the public [CK repository](http://cKnowledge.org/repo), 
-however they can also be aggregated only on your local machine or in your workgroup 
-- you just need to add flag "--local".
+however they can also be aggregated only on your local machine or in your workgroup - you just need to add flag "--local".
 
 ## Collaborative and unified optimization of DNN
 
 We are now working to add our [universal, customizable and multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
-to crowdsource optimization of the whole SW/HW/model/data set stack ([https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC](paper 1), 
-[https://arxiv.org/abs/1506.06256](paper 2)) - please stay tuned ;) !
+to crowdsource optimization of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
+[paper 2](https://arxiv.org/abs/1506.06256)) - please stay tuned ;) !
 
 ## Other DNN
 
