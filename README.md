@@ -69,6 +69,10 @@ $ ck run program:caffe --cmd_key=classify
 $ ck run program:caffe2 --cmd_key=classify
 ```
 
+Note, that Caffe2, besides some very useful improvements, also changed various support programs 
+and API. However, our approach helped our collaborators hide these changes via CK API and thus
+protect higher-level experimental workflows!
+
 You can find and install additional Caffe and Caffe2 models via CK:
 ```
 $ ck search package:* --tags=caffemodel
@@ -95,14 +99,20 @@ $ ck crowdbench caffe --env.BATCH_SIZE=5
 $ ck crowdbench caffe2 --env.BATCH_SIZE=5 --user=i_want_to_ack_my_contribution
 ```
 
-Performance results will be aggregated in the public [CK repository](http://cKnowledge.org/repo), 
+Performance results are continuously aggregated in the public [CK repository](http://cKnowledge.org/repo), 
 however they can also be aggregated only on your local machine or in your workgroup - you just need to add flag "--local".
 
 ## Collaborative and unified optimization of DNN
 
 We are now working to add our [universal, customizable and multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
-to crowdsource optimization of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
-[paper 2](https://arxiv.org/abs/1506.06256)) - please stay tuned ;) !
+to crowdsource optimization of the whole SW/HW/model/data set stack ([ARM TechCon'16](http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems),
+[paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
+[paper 2](https://arxiv.org/abs/1506.06256)).
+
+We had lots of interest to this collaborative AI optimization approach powered by CK 
+at the Embedded Vision Summit'17,  so please stay tuned ;) !
+
+[![logo](http://cKnowledge.org/images/dividiti_arm_stand.jpg)](https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability)
 
 ## Other DNN
 
