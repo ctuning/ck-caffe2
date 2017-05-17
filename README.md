@@ -32,7 +32,7 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 * [Grigori Fursin](http://fursin.net/research.html), dividiti / cTuning foundation
 * [Anton Lokhmotov](http://dividiti.com), dividiti
 
-## Example of Caffe and Caffe2 unified installation on Ubuntu via CK
+## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
 
 ```
 $ sudo apt install coreutils build-essential make cmake wget git python python-pip
@@ -40,14 +40,27 @@ $ sudo pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-lea
 
 $ sudo pip install ck
 
-$ ck pull repo:ck-caffe
+$ ck pull repo --url=https://github.com/dividiti/ck-caffe
 $ ck pull repo:ck-caffe2
 
 $ ck install package:lib-caffe-bvlc-master-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
 $ ck install package:lib-caffe2-master-eigen-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
 ```
 
-You can find detailed instructions to install Caffe (CPU, CUDA, OpenCL versions) via CK on Ubuntu, Gentoo, Yocto, Raspberry Pi, Odroid, Windows and Android [here](https://github.com/dividiti/ck-caffe/wiki/Installation). Caffe2 instructions are coming soon!
+## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
+
+If you have CUDA-compatible GPGPU with drivers, CUDA and cuDNN installed,
+you can install Caffe and Caffe2 for GPGPU via CK as following
+(CK will automatically find your CUDA installation):
+
+```
+$ ck install package:lib-caffe-bvlc-master-cuda-universal --env.CAFFE_BUILD_PYTHON=ON
+$ ck install package:lib-caffe-bvlc-master-cudnn-universal --env.CAFFE_BUILD_PYTHON=ON
+$ ck install package:lib-caffe2-master-eigen-cuda-universal --env.CAFFE_BUILD_PYTHON=ON
+```
+You can find detailed instructions to install Caffe (CPU, CUDA, OpenCL versions) via CK 
+on Ubuntu, Gentoo, Yocto, Raspberry Pi, Odroid, Windows and Android [here](https://github.com/dividiti/ck-caffe/wiki/Installation). 
+Caffe2 detailed instructions about customized CK builds are coming soon!
 
 ## Example of Caffe and Caffe2 unified classification on Ubuntu via CK
 
@@ -68,8 +81,46 @@ $ ck install package:caffemodel2-deepscale-squeezenet-1.1
 $ ck install package:caffemodel2-resnet50
 ```
 
-## Online demo of a unified CK-AI API 
+## Collaborative and unified benchmarking of DNN
 
+Additional motivation to use CK wrappers for DNN is the possibility 
+to assemble various experimental workflows, crowdsource experiments
+and engage with the community to collaboratively solve complex problems 
+([notes](https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability)). 
+For example, we added basic support to collaboratively evaluate various DNN engines
+via unified CK API:
+
+```
+$ ck crowdbench caffe --env.BATCH_SIZE=5
+$ ck crowdbench caffe2 --env.BATCH_SIZE=5 --user=i_want_to_ack_my_contribution
+```
+
+Performance results will be aggregated in the public [CK repository](http://cKnowledge.org/repo), 
+however they can also be aggregated only on your local machine or in your workgroup 
+- you just need to add flag "--local".
+
+## Collaborative and unified optimization of DNN
+
+We are now working to add our [universal, customizable and multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
+to crowdsource optimization of the whole SW/HW/model/data set stack ([https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC](paper 1), 
+[https://arxiv.org/abs/1506.06256](paper 2)) - please stay tuned ;) !
+
+## Other DNN
+
+We added similar support to install, use and evaluate [TensorFlow](https://www.tensorflow.org) via CK:
+
+```
+$ ck pull repo:ck-tensorflow
+
+$ ck install lib-tensorflow-1.1.0-cpu
+$ ck install lib-tensorflow-1.1.0-cuda
+
+$ ck run program:tensorflow --cmd_key=classify
+
+$ ck crowdbench tensorflow --env.BATCH_SIZE=5
+```
+
+## Online demo of a unified CK-AI API 
 
 * [Simple demo](http://cknowledge.org/repo/web.php?template=ck-ai-basic) to classify images with
 continuous optimization of DNN engines underneath, sharing of mispredictions and creation of a community training set;
