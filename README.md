@@ -110,7 +110,8 @@ to crowdsource optimization of the whole SW/HW/model/data set stack ([ARM TechCo
 [paper 2](https://arxiv.org/abs/1506.06256)).
 
 We had lots of interest to this collaborative AI optimization approach powered by CK 
-at the Embedded Vision Summit'17,  so please stay tuned ;) !
+at [ARM TechCon'16](http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems)
+and the Embedded Vision Summit'17,  so please stay tuned ;) !
 
 [![logo](http://cKnowledge.org/images/dividiti_arm_stand.jpg)](https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability)
 
