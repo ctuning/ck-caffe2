@@ -108,9 +108,10 @@ We are now working to add our [universal, customizable and multi-objective CK au
 to crowdsource optimization of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
 [paper 2](https://arxiv.org/abs/1506.06256)).
 
-We had lots of interest to this collaborative AI optimization approach powered by CK 
+We would like to thank the community for their interest and feedback about 
+this collaborative AI optimization approach powered by CK 
 at [ARM TechCon'16](http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems)
-and the Embedded Vision Summit'17,  so please stay tuned ;) !
+and the Embedded Vision Summit'17 - so please stay tuned ;) !
 
 [![logo](http://cKnowledge.org/images/dividiti_arm_stand.jpg)](https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability)
 
