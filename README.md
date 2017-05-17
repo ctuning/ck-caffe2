@@ -1,4 +1,4 @@
-# Unifying and optimizing AI using Collective Knowledge workflow framework with JSON API
+# AI unification and collaborative optimization using Collective Knowledge workflow framework with common JSON API
 
 [![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-powered-by-ck.png)](https://github.com/ctuning/ck)
 [![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-validated-by-the-community-simple.png)](http://cTuning.org)
@@ -27,10 +27,9 @@ help of the community (see [public CK repo](http://cKnowledge.org/repo)).
 
 See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
-## Authors/contributors
-
-* [Grigori Fursin](http://fursin.net/research.html), dividiti / cTuning foundation
-* [Anton Lokhmotov](http://dividiti.com), dividiti
+## Coordination of development
+* [cTuning Foundation](http://cTuning.org)
+* [dividiti](http://dividiti.com)
 
 ## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
 
