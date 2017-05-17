@@ -105,8 +105,7 @@ however they can also be aggregated only on your local machine or in your workgr
 ## Collaborative and unified optimization of DNN
 
 We are now working to add our [universal, customizable and multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
-to crowdsource optimization of the whole SW/HW/model/data set stack ([ARM TechCon'16](http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems),
-[paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
+to crowdsource optimization of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
 [paper 2](https://arxiv.org/abs/1506.06256)).
 
 We had lots of interest to this collaborative AI optimization approach powered by CK 
