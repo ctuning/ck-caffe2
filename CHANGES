@@ -1,3 +1,5 @@
+2017.05.18 - added customizable autotuning example (script:explore-batch-size-unified-and-customized ; ck autotune caffe2)
+
 2017.05.16 - added first prototype of benchmarking via CK
            - unified benchmarking
            - started adding crowdbenchmarking via CK
