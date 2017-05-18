@@ -101,10 +101,23 @@ $ ck crowdbench caffe2 --env.BATCH_SIZE=5 --user=i_want_to_ack_my_contribution
 Performance results are continuously aggregated in the public [CK repository](http://cKnowledge.org/repo), 
 however they can also be aggregated only on your local machine or in your workgroup - you just need to add flag "--local".
 
+## Unified, multi-dimensional and multi-objective autotuning
+
+It is now possible to take advantage of our [universal multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
+to optimize Caffe. As a first simple example, we added batch size tuning via CK. You can invoke it as following:
+
+```
+$ ck autotune caffe
+$ ck autotune caffe2
+```
+
+All results will be recorded in the local CK repository and 
+you will be given command lines to plot graphs or replay experiments.
+
 ## Collaborative and unified optimization of DNN
 
-We are now working to add our [universal, customizable and multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
-to crowdsource optimization of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
+We are now working to extend above autotuner and crowdsource optimization 
+of the whole SW/HW/model/data set stack ([paper 1](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=IwcnpkwAAAAJ&citation_for_view=IwcnpkwAAAAJ:maZDTaKrznsC), 
 [paper 2](https://arxiv.org/abs/1506.06256)).
 
 We would like to thank the community for their interest and feedback about 
@@ -127,6 +140,8 @@ $ ck install lib-tensorflow-1.1.0-cuda
 $ ck run program:tensorflow --cmd_key=classify
 
 $ ck crowdbench tensorflow --env.BATCH_SIZE=5
+
+$ ck autotune tensorflow
 ```
 
 ## Online demo of a unified CK-AI API 
