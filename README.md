@@ -21,7 +21,7 @@ installation across Linux, Windows, MacOS and Android (rather than using ad-hoc 
 and provide simple JSON API for common operations such as prediction and training (see [demo](http://cKnowledge.org/ai/ck-api-demo)).
 
 At the same time, CK allows us to continuously optimize ([1](https://arxiv.org/abs/1506.06256), [2](http://doi.acm.org/10.1145/2909437.2909449))
-the whole AI stack (SW/HW/models) across diverse platforms from mobile devices and IoT to supercomputers 
+the whole AI stack (SW/HW/models) across diverse platforms from mobile devices and IoT to supercomputers
 in terms of accuracy, execution time, power consumption, resource usage and other costs with the
 help of the community (see [public CK repo](http://cKnowledge.org/repo)).
 
@@ -131,7 +131,7 @@ and the Embedded Vision Summit'17 - so please stay tuned ;) !
 
 [![logo](http://cKnowledge.org/images/dividiti_arm_stand.jpg)](https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability)
 
-## Other DNN
+## Unified DNN API via CK
 
 We added similar support to install, use and evaluate [TensorFlow](https://www.tensorflow.org) via CK:
 
@@ -153,6 +153,14 @@ $ ck autotune tensorflow
 * [Simple demo](http://cknowledge.org/repo/web.php?template=ck-ai-basic) to classify images with
 continuous optimization of DNN engines underneath, sharing of mispredictions and creation of a community training set;
 and to predict compiler optimizations based on program features.
+
+## Realistic/representative training sets
+
+We provided an option in all our AI crowd-tuning tools to let the community report 
+and share mispredictions (images, correct label and wrong misprediction) 
+to gradually and collaboratively build realistic data/training sets:
+* [Public repository (see "mispredictions and unexpected behavior)](http://cknowledge.org/repo/web.php?action=index&module_uoa=wfe&native_action=show&native_module_uoa=program.optimization)
+* [Misclassified images via CK-based AI web-service](http://cknowledge.org/repo/web.php?action=index&module_uoa=wfe&native_action=show&native_module_uoa=program.optimization)
 
 ## Next steps
 
