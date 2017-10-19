@@ -35,7 +35,9 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
 ```
 $ sudo apt install coreutils build-essential make cmake wget git python python-pip
-$ sudo pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf
+$ sudo pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
+$ sudo pip install --upgrade beautifulsoup4
+$ sudo pip install --upgrade html5lib
 
 $ sudo pip install ck
 

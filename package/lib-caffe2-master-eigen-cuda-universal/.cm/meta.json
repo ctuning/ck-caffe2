@@ -5,7 +5,7 @@
     "git_src_dir": "src", 
     "install_env": {
       "BUILD_BINARY": "ON", 
-      "CAFFE_BUILD_PYTHON": "OFF", 
+      "CAFFE_BUILD_PYTHON": "ON", 
       "BUILD_SHARED_LIBS": "ON", 
       "BUILD_TEST": "OFF", 
       "CMAKE_CONFIG": "Release", 
@@ -142,8 +142,8 @@
     }
   }, 
   "end_full_path": {
-    "linux": "install/lib/libCaffe2_GPU.so", 
-    "win": "install/lib/Caffe2_GPU.lib"
+    "linux": "install/lib/libcaffe2_gpu.so", 
+    "win": "install/lib/caffe2_gpu.lib"
   }, 
   "need_cpu_info": "yes", 
   "only_for_target_os_tags": [

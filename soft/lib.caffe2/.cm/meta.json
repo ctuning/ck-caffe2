@@ -9,8 +9,8 @@
       "win": 4
     }, 
     "soft_file": {
-      "linux": "libcaffe.so", 
-      "win": "caffe.exe"
+      "linux": "libcaffe2.so", 
+      "win": "caffe2.exe"
     }
   }, 
   "deps": {}, 

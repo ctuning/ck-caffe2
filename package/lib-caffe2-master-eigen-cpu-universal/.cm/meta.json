@@ -5,7 +5,7 @@
     "git_src_dir": "src", 
     "install_env": {
       "BUILD_BINARY": "ON", 
-      "CAFFE_BUILD_PYTHON": "OFF", 
+      "CAFFE_BUILD_PYTHON": "ON", 
       "BUILD_SHARED_LIBS": "ON", 
       "BUILD_TEST": "OFF", 
       "CMAKE_CONFIG": "Release", 
@@ -149,9 +149,9 @@
     }
   }, 
   "end_full_path": {
-    "android": "install/lib/libCaffe2_CPU.so", 
-    "linux": "install/lib/libCaffe2_CPU.so", 
-    "win": "install/lib/Caffe2_CPU.lib"
+    "android": "install/lib/libcaffe2.so", 
+    "linux": "install/lib/libcaffe2.so", 
+    "win": "install/lib/caffe2.lib"
   }, 
   "need_cpu_info": "yes", 
   "only_for_host_os_tags": [
