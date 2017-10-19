@@ -1,0 +1,27 @@
+diff -ruN src\caffe2\db\lmdb.cc src-new\caffe2\db\lmdb.cc
+--- src\caffe2\db\lmdb.cc	Tue May 09 18:15:14 2017
++++ src-new\caffe2\db\lmdb.cc	Tue May 09 17:52:09 2017
+@@ -1,5 +1,9 @@
+ #include "lmdb.h"  // NOLINT
+ 
++#if defined(_WIN32)
++#include <direct.h>
++#endif
++
+ #include <sys/stat.h>
+ 
+ #include <string>
+@@ -138,8 +142,13 @@
+   MDB_CHECK(mdb_env_create(&mdb_env_));
+   MDB_CHECK(mdb_env_set_mapsize(mdb_env_, LMDB_MAP_SIZE));
+   if (mode == NEW) {
++#if defined(_WIN32)
++    CAFFE_ENFORCE_EQ(
++        _mkdir(source.c_str()), 0, "mkdir ", source, " failed");
++#else
+     CAFFE_ENFORCE_EQ(
+         mkdir(source.c_str(), 0744), 0, "mkdir ", source, " failed");
++#endif
+   }
+   int flags = 0;
+   if (mode == READ) {

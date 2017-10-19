@@ -16,7 +16,6 @@
       "PACKAGE_CONFIGURE_FLAGS_WINDOWS": "", 
       "PACKAGE_COPY": "NO", 
       "PACKAGE_GIT": "YES", 
-      "PACKAGE_GIT_CHECKOUT": "v0.8.1",
       "PACKAGE_PATCH": "NO", 
       "PACKAGE_SKIP_BUILD_ERROR": "YES", 
       "PACKAGE_SKIP_CLEAN_INSTALL": "NO", 
@@ -27,7 +26,7 @@
       "PACKAGE_URL": "https://github.com/caffe2/caffe2", 
       "PYTHON_EXE": "python", 
       "USE_CNMEM": "OFF", 
-      "USE_CUDA": "OFF", 
+      "USE_CUDA": "ON", 
       "USE_GFLAGS": "ON", 
       "USE_GLOG": "ON", 
       "USE_GLOO": "OFF", 
@@ -48,7 +47,7 @@
     }, 
     "sort":10000,
     "use_git_revision": "yes", 
-    "version": "0.8.1"
+    "version": "trunk"
   }, 
   "deps": {
     "cmake": {
@@ -70,54 +69,65 @@
         "win": "mcl"
       }
     }, 
+    "compiler-cuda": {
+      "local": "yes", 
+      "name": "CUDA compiler >=7.0", 
+      "sort": 11, 
+      "tags": "compiler,lang-c-cuda"
+    }, 
     "lib-gflags": {
       "force_env_init": "yes", 
       "local": "yes", 
       "name": "GFlags library", 
-      "skip_default":"yes",
+      "skip_installed": {
+        "android": "yes", 
+        "win": "yes"
+      }, 
       "sort": 12, 
-      "tags": "lib,gflags,v2.2.0" 
+      "tags": "lib,gflags", 
+      "update_tags_by_target_platform2": {
+        "android": "v2.2.0", 
+        "win": ""
+      }
     }, 
     "lib-glog": {
       "local": "yes", 
       "name": "GLog library", 
-      "skip_default":"yes",
+      "skip_installed": {
+        "android": "yes", 
+        "win": "yes"
+      }, 
       "sort": 14, 
-      "tags": "lib,glog,v0.3.5"
+      "tags": "lib,glog"
     }, 
     "lib-lmdb": {
       "local": "yes", 
       "name": "LMDB library", 
-      "skip_default":"yes",
       "only_for_target_os_tags": [
         "linux", 
         "windows"
       ], 
       "sort": 18, 
-      "tags": "lib,lmdb,v0.9.21"
+      "tags": "lib,lmdb"
     }, 
     "lib-opencv": {
       "local": "yes", 
       "name": "OpenCV library", 
-      "skip_default":"yes",
+      "skip_installed": {
+        "android": "yes", 
+        "win": "yes"
+      }, 
       "sort": 20, 
-      "tags": "lib,opencv,v3.3.0"
-    }, 
-    "lib-protobuf": {
-      "local": "yes", 
-      "name": "ProtoBuf library", 
-      "only_for_target_os_tags": [
-        "android"
-      ], 
-      "skip_default":"yes",
-      "sort": 110, 
-      "tags": "lib,protobuf,v3.2.0"
+      "tags": "lib,opencv"
     }, 
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
       "name": "ProtoBuf host compiler", 
-      "skip_default":"yes",
+      "skip_installed": {
+        "android": "yes", 
+        "win": "yes"
+      }, 
       "sort": 115, 
       "tags": "lib,protobuf-host,v3.2.0"
     }, 
@@ -133,33 +143,24 @@
     }
   }, 
   "end_full_path": {
-    "android": "install/lib/libCaffe2_CPU.so", 
-    "linux": "install/lib/libCaffe2_CPU.so", 
-    "win": "install/lib/Caffe2_CPU.lib"
+    "linux": "install/lib/libcaffe2_gpu.so", 
+    "win": "install/lib/caffe2_gpu.lib"
   }, 
   "need_cpu_info": "yes", 
-  "only_for_host_os_tags": [
+  "only_for_target_os_tags": [
     "linux", 
     "windows"
   ], 
-  "only_for_target_os_tags": [
-    "linux", 
-    "windows", 
-    "android"
-  ], 
-  "package_extra_name": " (eigen, cpu)", 
+  "package_extra_name": " (eigen, cuda)", 
   "process_script": "install", 
   "soft_uoa": "54c5b933f17fb81c", 
-  "suggested_path": "lib-caffe2-master-eigen-cpu", 
+  "suggested_path": "lib-caffe2-master-eigen-cuda", 
   "tags": [
     "lib", 
     "facebook", 
     "caffe2", 
-    "v0.8.1", 
-    "v0.8",
-    "v0",
-    "vcpu",
-    "channel-stable"
+    "vmaster", 
+    "vcuda"
   ], 
   "use_preprocess_scripts_from_another_entry": {
     "data_uoa": "fd44428fbc77f77f", 
