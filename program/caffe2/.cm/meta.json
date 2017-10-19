@@ -58,6 +58,7 @@
           "local": "yes", 
           "name": "Caffe2 lib", 
           "sort": 5, 
+          "skip_pruning_by_other_deps":"yes",
           "tags": "lib,caffe2"
         }, 
         "caffemodel2": {
@@ -83,6 +84,7 @@
           "local": "yes", 
           "name": "Caffe2 lib", 
           "sort": 5, 
+          "skip_pruning_by_other_deps":"yes",
           "tags": "lib,caffe2"
         }, 
         "caffemodel": {
@@ -167,6 +169,7 @@
           "local": "yes", 
           "name": "Caffe2 library", 
           "sort": 10, 
+          "skip_pruning_by_other_deps":"yes",
           "tags": "lib,caffe2,vcuda"
         }, 
         "python": {

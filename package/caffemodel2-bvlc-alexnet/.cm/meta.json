@@ -72,7 +72,8 @@
     "weights", 
     "caffemodel2", 
     "bvlc", 
-    "alexnet"
+    "alexnet",
+    "channel-stable"
   ], 
   "use_scripts_from_another_entry": {
     "data_uoa": "download-caffemodel", 
