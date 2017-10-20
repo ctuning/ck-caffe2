@@ -31,7 +31,7 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 * [cTuning Foundation](http://cTuning.org)
 * [dividiti](http://dividiti.com)
 
-## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
+## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK (including Raspberry Pi 3)
 
 Note that you need Python 2.x!
 
@@ -58,15 +58,6 @@ We tested it with Anaconda Python 2.x (should be in path for pip)
 $ pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
 $ pip install --upgrade beautifulsoup4
 $ pip install --upgrade html5lib
-```
-
-## Dependencies for Rapsberry Pi 3+
-
-```
-$ sudo apt install coreutils build-essential make cmake python python-pip
-$ sudo pip install scipy scikit-image pyyaml protobuf future google
-$ sudo pip install --upgrade beautifulsoup4
-$ sudo pip install --upgrade html5lib
 ```
 
 ## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
