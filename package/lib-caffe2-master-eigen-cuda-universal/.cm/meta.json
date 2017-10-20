@@ -5,9 +5,9 @@
     "git_src_dir": "src", 
     "install_env": {
       "BUILD_BINARY": "ON", 
-      "CAFFE_BUILD_PYTHON": "ON", 
       "BUILD_SHARED_LIBS": "ON", 
       "BUILD_TEST": "OFF", 
+      "CAFFE_BUILD_PYTHON": "ON", 
       "CMAKE_CONFIG": "Release", 
       "PACKAGE_BUILD_TYPE": "cmake", 
       "PACKAGE_CONFIGURE_FLAGS": "", 
@@ -69,12 +69,16 @@
       }
     }, 
     "compiler-cuda": {
-      "local": "yes",
-      "name": "CUDA compiler >=7.0",
-      "sort": 11,
-      "tags": "compiler,lang-c-cuda",
-      "version_from":[7,0,0]
-    },
+      "local": "yes", 
+      "name": "CUDA compiler >=7.0", 
+      "sort": 11, 
+      "tags": "compiler,lang-c-cuda", 
+      "version_from": [
+        7, 
+        0, 
+        0
+      ]
+    }, 
     "lib-gflags": {
       "force_env_init": "yes", 
       "local": "yes", 
@@ -136,8 +140,12 @@
       "local": "yes", 
       "name": "python", 
       "sort": 0, 
-      "tags": "compiler,python",
-      "version_to":[2,8,0]
+      "tags": "compiler,python", 
+      "version_to": [
+        2, 
+        8, 
+        0
+      ]
     }
   }, 
   "end_full_path": {

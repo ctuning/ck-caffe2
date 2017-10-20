@@ -45,7 +45,7 @@
       "USE_ZMQ": "OFF", 
       "WHICH_BLAS": "Eigen"
     }, 
-    "sort":10000,
+    "sort": 10000, 
     "use_git_revision": "yes", 
     "version": "0.8.1"
   }, 
@@ -73,56 +73,65 @@
       "local": "yes", 
       "name": "CUDA compiler", 
       "sort": 11, 
-      "tags": "compiler,lang-c-cuda",
-      "version_from":[7,0,0]
+      "tags": "compiler,lang-c-cuda", 
+      "version_from": [
+        7, 
+        0, 
+        0
+      ]
     }, 
     "lib-gflags": {
       "force_env_init": "yes", 
       "local": "yes", 
       "name": "GFlags library", 
-      "skip_default":"yes",
+      "skip_default": "yes", 
       "sort": 12, 
-      "tags": "lib,gflags,v2.2.0" 
+      "tags": "lib,gflags,v2.2.0"
     }, 
     "lib-glog": {
       "local": "yes", 
       "name": "GLog library", 
-      "skip_default":"yes",
+      "skip_default": "yes", 
       "sort": 14, 
       "tags": "lib,glog,v0.3.5"
     }, 
     "lib-lmdb": {
       "local": "yes", 
       "name": "LMDB library", 
-      "skip_default":"yes",
       "only_for_target_os_tags": [
         "linux", 
         "windows"
       ], 
+      "skip_default": "yes", 
       "sort": 18, 
       "tags": "lib,lmdb,v0.9.21"
     }, 
     "lib-opencv": {
       "local": "yes", 
       "name": "OpenCV library", 
-      "skip_default":"yes",
+      "skip_default": "yes", 
       "sort": 20, 
       "tags": "lib,opencv,v3.3.0"
-    },
+    }, 
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
       "name": "ProtoBuf host compiler", 
-      "skip_default":"yes",
+      "skip_default": "yes", 
       "sort": 115, 
       "tags": "lib,protobuf-host,v3.2.0"
-    },
+    }, 
     "python": {
       "force_target_as_host": "yes", 
       "local": "yes", 
       "name": "python", 
       "sort": 0, 
-      "version_to":[2,8,0]
+      "tags": "compiler,python", 
+      "version_to": [
+        2, 
+        8, 
+        0
+      ]
     }
   }, 
   "end_full_path": {
@@ -143,9 +152,9 @@
     "facebook", 
     "caffe2", 
     "v0.8.1", 
-    "v0.8",
-    "v0",
-    "vcuda",
+    "v0.8", 
+    "v0", 
+    "vcuda", 
     "channel-stable"
   ], 
   "use_preprocess_scripts_from_another_entry": {
