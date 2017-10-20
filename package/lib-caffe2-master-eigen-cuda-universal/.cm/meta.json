@@ -1,5 +1,6 @@
 {
   "check_exit_status": "yes", 
+  "comment":"works on Linux but has issues on Windows",
   "customize": {
     "extra_dir": "", 
     "git_src_dir": "src", 
