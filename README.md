@@ -33,6 +33,8 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
 ## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
 
+Note that you need Python 2.x!
+
 ```
 $ sudo apt install coreutils build-essential make cmake wget git python python-pip
 $ sudo pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
@@ -46,6 +48,25 @@ $ ck pull repo:ck-caffe2
 
 $ ck install package:lib-caffe-bvlc-master-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
 $ ck install package:lib-caffe2-master-eigen-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
+```
+
+## Dependencies for Windows
+
+We tested it with Anaconda Python 2.x (should be in path for pip)
+
+```
+$ pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
+$ pip install --upgrade beautifulsoup4
+$ pip install --upgrade html5lib
+```
+
+## Dependencies for Rapsberry Pi 3+
+
+```
+$ sudo apt install coreutils build-essential make cmake python python-pip
+$ sudo pip install scipy scikit-image pyyaml protobuf future google
+$ sudo pip install --upgrade beautifulsoup4
+$ sudo pip install --upgrade html5lib
 ```
 
 ## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
@@ -166,7 +187,7 @@ to gradually and collaboratively build realistic data/training sets:
 
 ## Next steps
 
-We would like to improve Caffe2 installation via CK on Windows and Android similar to [CK-Caffe](https://github.com/dividiti/ck-caffe/wiki/Installation).
+We would like to improve Caffe2 installation via CK on Android similar to [CK-Caffe](https://github.com/dividiti/ck-caffe/wiki/Installation).
 
 ## Long term vision
 
