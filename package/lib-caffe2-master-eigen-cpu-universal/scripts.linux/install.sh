@@ -34,6 +34,16 @@ if [ "${CAFFE_BUILD_PYTHON}" == "ON" ] ; then
   read -p "Press enter to continue"
 fi
 
+CK_OPENMP="-fopenmp"
+if [ "${CK_HAS_OPENMP}" = "0"  ]; then
+  CK_OPENMP=""
+fi
+
+OPENCV_DIR=${CK_ENV_LIB_OPENCV_JNI}
+if [ "${OPENCV_DIR}" == "" ]; then
+  OPENCV_DIR=${CK_ENV_LIB_OPENCV}/share/OpenCV
+fi
+
 # Check extra stuff
 EXTRA_FLAGS=""
 
@@ -73,13 +83,12 @@ cmake -DCMAKE_BUILD_TYPE=${CK_ENV_CMAKE_BUILD_TYPE:-Release} \
       -DGLOG_INCLUDE_DIR="${CK_ENV_LIB_GLOG_INCLUDE}" \
       -DGFLAGS_LIBRARY="${CK_ENV_LIB_GFLAGS_LIB}/libgflags.so" \
       -DGLOG_LIBRARY="${CK_ENV_LIB_GLOG_LIB}/libglog.so" \
-      -DOpenBLAS_INCLUDE_DIR="${CK_ENV_LIB_OPENBLAS_INCLUDE}" \
-      -DOpenBLAS_LIB="${CK_ENV_LIB_OPENBLAS_LIB}/libopenblas.a" \
       -DLMDB_INCLUDE_DIR="${CK_ENV_LIB_LMDB_INCLUDE}" \
       -DLMDB_LIBRARIES="${CK_ENV_LIB_LMDB_LIB}/liblmdb.so" \
       -DOpenCV_DIR="${OPENCV_DIR}" \
       -DPROTOBUF_INCLUDE_DIR="${CK_ENV_LIB_PROTOBUF_HOST_INCLUDE}" \
       -DPROTOBUF_PROTOC_EXECUTABLE="${CK_ENV_LIB_PROTOBUF_HOST}/bin/protoc" \
+      -DPROTOBUF_LIBRARY="${CK_ENV_LIB_PROTOBUF_HOST_LIB}/libprotobuf.a" \
       -DCMAKE_INSTALL_PREFIX="${INSTALL_DIR}/install" \
       -DCMAKE_VERBOSE_MAKEFILE=ON \
       ../src

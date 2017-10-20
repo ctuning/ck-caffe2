@@ -72,7 +72,8 @@
       "local": "yes",
       "name": "CUDA compiler >=7.0",
       "sort": 11,
-      "tags": "compiler,lang-c-cuda"
+      "tags": "compiler,lang-c-cuda",
+      "version_from":[7,0,0]
     },
     "lib-gflags": {
       "force_env_init": "yes", 
@@ -134,11 +135,9 @@
       "force_target_as_host": "yes", 
       "local": "yes", 
       "name": "python", 
-      "only_for_target_os_tags": [
-        "windows"
-      ], 
       "sort": 0, 
-      "tags": "compiler,python"
+      "tags": "compiler,python",
+      "version_to":[2,8,0]
     }
   }, 
   "end_full_path": {
