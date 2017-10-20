@@ -1,6 +1,6 @@
 diff -ruN src\CMakeLists.txt src-new\CMakeLists.txt
---- src\CMakeLists.txt	Fri Oct 20 17:30:14 2017
-+++ src-new\CMakeLists.txt	Fri Oct 20 17:31:14 2017
+--- src\CMakeLists.txt	Fri Oct 20 18:15:14 2017
++++ src-new\CMakeLists.txt	Fri Oct 20 18:16:56 2017
 @@ -119,6 +119,8 @@
  # in PROJECT_SOURCE_DIR.
  include_directories(BEFORE ${PROJECT_BINARY_DIR})
@@ -10,3 +10,15 @@ diff -ruN src\CMakeLists.txt src-new\CMakeLists.txt
  # ---[ Old caffe protobuf.
  add_subdirectory(caffe/proto)
  
+@@ -156,6 +158,11 @@
+   if (USE_CUDA)
+     target_link_libraries(caffe2_gpu INTERFACE glog gflags protobuf)
+   endif()
++endif()
++
++target_link_libraries(caffe2 INTERFACE protobuf)
++if (USE_CUDA)
++ target_link_libraries(caffe2_gpu INTERFACE protobuf)
+ endif()
+ 
+ # Note(jiayq): Android cmake has an unresolved issue right now

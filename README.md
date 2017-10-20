@@ -52,7 +52,7 @@ $ ck install package --tags=lib,caffe2,vcpu
 
 ## Dependencies for Windows
 
-We tested it with Anaconda Python 2.x (should be in path for pip)
+We tested it with Anaconda Python 2.x (should be in path for pip). Note that only stable package currently works - 0.8.1 (there is an issue with custom protobuf in the master branch)
 
 ```
 $ pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
