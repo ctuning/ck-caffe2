@@ -1,0 +1,12 @@
+diff -ruN src\CMakeLists.txt src-new\CMakeLists.txt
+--- src\CMakeLists.txt	Fri Oct 20 17:30:14 2017
++++ src-new\CMakeLists.txt	Fri Oct 20 17:31:14 2017
+@@ -119,6 +119,8 @@
+ # in PROJECT_SOURCE_DIR.
+ include_directories(BEFORE ${PROJECT_BINARY_DIR})
+ 
++include_directories(${PROJECT_SOURCE_DIR}/build_host_protoc/include)
++
+ # ---[ Old caffe protobuf.
+ add_subdirectory(caffe/proto)
+ 
