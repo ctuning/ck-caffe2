@@ -22,6 +22,13 @@ if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
  xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%\* third_party\protobuf\
 )
 
+if exist "%CK_ENV_LIB_PROTOBUF_HOST%" (
+ if not exist "build_host_protoc" (
+   mkdir build_host_protoc
+ )
+ xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST%\* build_host_protoc\
+)
+
 rem git submodule update --init -- third_party\protobuf
 
 if "%CAFFE_BUILD_PYTHON%" == "ON" (
@@ -71,6 +78,8 @@ set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DBUILD_PYTHON=%CAFFE_BUILD_PYTHON% ^
  -DBUILD_BINARY=OFF ^
  -DBUILD_TEST=%BUILD_TEST% ^
+ -DCUDA_TOOLKIT_ROOT_DIR="%CK_ENV_COMPILER_CUDA%" ^
+ -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES -Wno-deprecated-gpu-targets" ^
  -DPROTOBUF_PROTOC_EXECUTABLE="%CK_ENV_LIB_PROTOBUF_HOST%\bin\protoc.exe" ^
  -DGFLAGS_INCLUDE_DIR="%CK_ENV_LIB_GFLAGS_INCLUDE%" ^
  -DGFLAGS_LIBRARY_RELEASE="%CK_ENV_LIB_GFLAGS_LIB%\gflags.lib" ^

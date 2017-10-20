@@ -21,6 +21,13 @@ if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
  xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%\* third_party\protobuf\
 )
 
+if exist "%CK_ENV_LIB_PROTOBUF_HOST%" (
+ if not exist "build_host_protoc" (
+   mkdir build_host_protoc
+ )
+ xcopy /s /e /y %CK_ENV_LIB_PROTOBUF_HOST%\* build_host_protoc\
+)
+
 rem git submodule update --init -- third_party\protobuf
 
 if "%CAFFE_BUILD_PYTHON%" == "ON" (

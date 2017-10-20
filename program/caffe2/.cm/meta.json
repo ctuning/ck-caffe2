@@ -34,7 +34,8 @@
           "local": "yes", 
           "name": "Caffe2 model (net and weights)", 
           "sort": 40, 
-          "tags": "caffemodel2"
+          "tags": "caffemodel2",
+          "no_tags": "caffemodel"
         }, 
         "python": {
           "local": "yes", 

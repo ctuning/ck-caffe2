@@ -1,0 +1,12 @@
+diff -ruN src\caffe2\operators\lengths_top_k_op.cc src-new\caffe2\operators\lengths_top_k_op.cc
+--- src\caffe2\operators\lengths_top_k_op.cc	Fri Oct 20 14:02:11 2017
++++ src-new\caffe2\operators\lengths_top_k_op.cc	Fri Oct 20 13:56:20 2017
+@@ -6,7 +6,7 @@
+ bool LengthsTopKOp<T, Context>::RunOnDevice() {
+   auto& X = Input(X_IN);
+   auto& Y = Input(Y_IN);
+-  auto N = Y.dim(0);
++  int N = Y.dim(0);
+   const T* X_data = X.template data<T>();
+   const int* input_len = Y.template data<int>();
+   auto* output_topk_values = Output(TOPK_VALUES_OUT);

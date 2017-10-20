@@ -87,9 +87,9 @@ print "NCHW: ", img.shape
 
 # initialize the neural net
 
-with open(INIT_NET) as f:
+with open(INIT_NET, 'rb') as f:
     init_net = f.read()
-with open(PREDICT_NET) as f:
+with open(PREDICT_NET, 'rb') as f:
     predict_net = f.read()
 
 p = workspace.Predictor(init_net, predict_net)
