@@ -31,7 +31,7 @@ See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 * [cTuning Foundation](http://cTuning.org)
 * [dividiti](http://dividiti.com)
 
-## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK (including Raspberry Pi 3)
+## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
 
 Note that you need Python 2.x!
 
@@ -46,8 +46,8 @@ $ sudo pip install ck
 $ ck pull repo --url=https://github.com/dividiti/ck-caffe
 $ ck pull repo:ck-caffe2
 
-$ ck install package:lib-caffe-bvlc-master-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
-$ ck install package:lib-caffe2-master-eigen-cpu-universal --env.CAFFE_BUILD_PYTHON=ON
+$ ck install --tags=lib,caffe,vcpu --env.CAFFE_BUILD_PYTHON=ON
+$ ck install --tags=lib,caffe2,vcpu
 ```
 
 ## Dependencies for Windows
@@ -58,6 +58,23 @@ We tested it with Anaconda Python 2.x (should be in path for pip)
 $ pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
 $ pip install --upgrade beautifulsoup4
 $ pip install --upgrade html5lib
+```
+
+## Example of Caffe2 unified CPU installation on Raspberry Pi 3+
+
+
+```
+$ sudo apt install coreutils build-essential make cmake python python-pip libblas-dev python-scipy 
+$ sudo apt install python-numpy python-pandas python-matplotlib python-scikit-image
+$ sudo pip install scikit-image pyyaml protobuf future google
+$ sudo pip install --upgrade beautifulsoup4
+$ sudo pip install --upgrade html5lib
+
+$ sudo pip install ck
+
+$ ck pull repo:ck-caffe2
+
+$ ck install --tags=lib,caffe2,vcpu --env.CK_HOST_CPU_NUMBER_OF_PROCESSORS=2 --env.CK_MISC_EXTRA_CXX_FLAGS="-mfpu=neon -mfloat-abi=hard" --env.CK_MISC_EXTRA_CXX_FLAGS="-mfpu=neon -mfloat-abi=hard"
 ```
 
 ## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
