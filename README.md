@@ -46,8 +46,8 @@ $ sudo pip install ck
 $ ck pull repo --url=https://github.com/dividiti/ck-caffe
 $ ck pull repo:ck-caffe2
 
-$ ck install --tags=lib,caffe,vcpu --env.CAFFE_BUILD_PYTHON=ON
-$ ck install --tags=lib,caffe2,vcpu
+$ ck install package --tags=lib,caffe,vcpu --env.CAFFE_BUILD_PYTHON=ON
+$ ck install package --tags=lib,caffe2,vcpu
 ```
 
 ## Dependencies for Windows
@@ -74,7 +74,7 @@ $ sudo pip install ck
 
 $ ck pull repo:ck-caffe2
 
-$ ck install --tags=lib,caffe2,vcpu --env.CK_HOST_CPU_NUMBER_OF_PROCESSORS=2 --env.CK_MISC_EXTRA_CXX_FLAGS="-mfpu=neon -mfloat-abi=hard" --env.CK_MISC_EXTRA_CXX_FLAGS="-mfpu=neon -mfloat-abi=hard"
+$ ck install package --tags=lib,caffe2,vcpu --env.CK_HOST_CPU_NUMBER_OF_PROCESSORS=2 --env.CAFFE2_CPU_FLAGS="-mfpu=neon -mfloat-abi=hard"
 ```
 
 ## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
