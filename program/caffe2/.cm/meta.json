@@ -41,8 +41,7 @@
           "local": "yes", 
           "name": "Python", 
           "sort": 0, 
-          "tags": "compiler,python",
-          "version_to":[2,8]
+          "tags": "compiler,python"
         }
       }, 
       "run_time": {
