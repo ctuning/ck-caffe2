@@ -58,7 +58,7 @@ PREDICT_NET = sys.argv[2]
 img = skimage.img_as_float(skimage.io.imread(IMAGE_LOCATION)).astype(np.float32)
 img = rescale(img, INPUT_IMAGE_SIZE, INPUT_IMAGE_SIZE)
 img = crop_center(img, INPUT_IMAGE_SIZE, INPUT_IMAGE_SIZE)
-print "After crop: " , img.shape
+print ("After crop: " , img.shape)
 #pyplot.figure()
 #pyplot.imshow(img)
 #pyplot.axis('on')
@@ -83,7 +83,7 @@ img = img * 255 - mean
 
 # add batch size
 img = img[np.newaxis, :, :, :].astype(np.float32)
-print "NCHW: ", img.shape
+print ("NCHW: ", img.shape)
 
 # initialize the neural net
 
@@ -99,7 +99,7 @@ results = p.run([img])
 
 # turn it into something we can play with and examine which is in a multi-dimensional array
 results = np.asarray(results)
-print "results shape: ", results.shape
+print ("results shape: ", results.shape)
 
 results = np.delete(results, 1)
 index = 0
@@ -116,7 +116,7 @@ for i, r in enumerate(results):
         highest = r
         index = i
 
-print index, " :: ", highest
+print (index, " :: ", highest)
 
 # lookup the code and return the result
 # top 3 results
