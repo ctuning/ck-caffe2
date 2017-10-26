@@ -3,7 +3,18 @@
   "data_name": "ck-caffe2", 
   "dict": {
     "url": "https://github.com/ctuning/ck-caffe2", 
-    "shared": "git"
+    "shared": "git",
+    "repo_deps": [
+      {
+        "repo_uoa": "ck-autotuning"
+      },
+      {
+        "repo_uoa": "ck-math"
+      },
+      {
+        "repo_uoa": "ck-caffe"
+      }
+    ]
   }, 
   "data_alias": "ck-caffe2", 
   "data_uoa": "ck-caffe2"
