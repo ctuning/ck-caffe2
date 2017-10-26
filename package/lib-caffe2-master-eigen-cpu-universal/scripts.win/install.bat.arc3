@@ -39,7 +39,9 @@ if "%CAFFE_BUILD_PYTHON%" == "ON" (
   set /p id="Press enter to continue"
 )
 
-cd /d %INSTALL_DIR%\obj
+cd /d %INSTALL_DIR%\src
+mkdir build_host_protoc
+
 
 rem echo **************************************************************
 rem echo Building protobuf for Caffe 2 ...
@@ -53,7 +55,10 @@ rem   -DCMAKE_BUILD_TYPE=Debug
 rem 
 rem msbuild INSTALL.vcxproj
 
-rem exit /b 1
+
+
+
+
 
 echo **************************************************************
 echo Preparing vars for Caffe 2 ...

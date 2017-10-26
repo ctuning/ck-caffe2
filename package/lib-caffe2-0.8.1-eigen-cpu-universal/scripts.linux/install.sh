@@ -18,13 +18,9 @@ echo "Preparing vars for Caffe 2 ..."
 
 # Get eigen
 cd ${INSTALL_DIR}/src
-git submodule update --init -- third_party/eigen
-git submodule update --init -- third_party/protobuf
 
 # Print about python
 if [ "${CAFFE_BUILD_PYTHON}" == "ON" ] ; then
-  git submodule update --init -- third_party/pybind11
-
   echo ""
   echo "You are compiling Caffe2 with Python support!"
   echo "To use it you need to set up CK env as following (after installation)":

@@ -14,8 +14,6 @@ rem INSTALL_DIR
 
 rem get eigen and protobuf
 cd /d %INSTALL_DIR%\src
-git submodule update --init -- third_party\eigen
-git submodule update --init -- third_party\cub
 
 rem Get protobuf from CK and copy here
 if exist "%CK_ENV_LIB_PROTOBUF_HOST_SRC_DIR%" (
@@ -32,8 +30,6 @@ if exist "%CK_ENV_LIB_PROTOBUF_HOST%" (
 rem git submodule update --init -- third_party\protobuf
 
 if "%CAFFE_BUILD_PYTHON%" == "ON" (
-  git submodule update --init -- third_party\pybind11
-
   echo.
   echo You are compiling Caffe2 with Python support!
   echo To use it you need to set up CK env as following ^(after installation^)^:
@@ -50,9 +46,6 @@ echo Preparing vars for Caffe 2 ...
 
 set CK_CXX_FLAGS_FOR_CMAKE=
 set CK_CXX_FLAGS_ANDROID_TYPICAL=
-
-set > d:\xyz
-exit /b 1
 
 set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
@@ -82,18 +75,20 @@ set CK_CMAKE_EXTRA=%CK_CMAKE_EXTRA% ^
  -DBUILD_BINARY=OFF ^
  -DBUILD_TEST=%BUILD_TEST% ^
  -DCUDA_TOOLKIT_ROOT_DIR="%CK_ENV_COMPILER_CUDA_WIN%" ^
- -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES -Wno-deprecated-gpu-targets --ccbin ^"%CK_ENV_COMPILER_MVSC_BIN%\cl.exe^"" ^
- -DPROTOBUF_PROTOC_EXECUTABLE="%CK_ENV_LIB_PROTOBUF_HOST%\bin\protoc.exe" ^
- -DGFLAGS_INCLUDE_DIR="%CK_ENV_LIB_GFLAGS_INCLUDE%" ^
- -DGFLAGS_LIBRARY_RELEASE="%CK_ENV_LIB_GFLAGS_LIB%\gflags.lib" ^
- -DGFLAGS_LIBRARY_DEBUG="%CK_ENV_LIB_GFLAGS_LIB%\gflags.lib" ^
- -DGLOG_INCLUDE_DIR="%CK_ENV_LIB_GLOG_INCLUDE%" ^
- -DGLOG_LIBRARY_RELEASE="%CK_ENV_LIB_GLOG_LIB%\glog.lib" ^
- -DGLOG_LIBRARY_DEBUG="%CK_ENV_LIB_GLOG_LIB%\glog.lib" ^
- -DLMDB_INCLUDE_DIR="%CK_ENV_LIB_LMDB_INCLUDE%" ^
- -DLMDB_LIBRARIES="%CK_ENV_LIB_LMDB_LIB%\lmdb.lib" ^
- -DOpenCV_DIR="%CK_ENV_LIB_OPENCV%" ^
- -DOpenCV_LIB_PATH="%CK_ENV_LIB_OPENCV_LIB%"
+ -DCUDA_HOST_COMPILER="%VCINSTALLDIR%\cl.exe" ^
+ -DCCBIN="%VCINSTALLDIR%\cl.exe" ^
+ -DPROTOBUF_PROTOC_EXECUTABLE="%CK_ENV_LIB_PROTOBUF_HOST%\bin\protoc.exe"
+
+rem -DGFLAGS_INCLUDE_DIR="%CK_ENV_LIB_GFLAGS_INCLUDE%" ^
+rem -DGFLAGS_LIBRARY_RELEASE="%CK_ENV_LIB_GFLAGS_LIB%\gflags.lib" ^
+rem -DGFLAGS_LIBRARY_DEBUG="%CK_ENV_LIB_GFLAGS_LIB%\gflags.lib" ^
+rem -DGLOG_INCLUDE_DIR="%CK_ENV_LIB_GLOG_INCLUDE%" ^
+rem -DGLOG_LIBRARY_RELEASE="%CK_ENV_LIB_GLOG_LIB%\glog.lib" ^
+rem -DGLOG_LIBRARY_DEBUG="%CK_ENV_LIB_GLOG_LIB%\glog.lib" ^
+rem -DLMDB_INCLUDE_DIR="%CK_ENV_LIB_LMDB_INCLUDE%" ^
+rem -DLMDB_LIBRARIES="%CK_ENV_LIB_LMDB_LIB%\lmdb.lib" ^
+rem -DOpenCV_DIR="%CK_ENV_LIB_OPENCV%" ^
+rem -DOpenCV_LIB_PATH="%CK_ENV_LIB_OPENCV_LIB%"
 
 rem -DUSE_LMDB=%USE_LMDB% ^
 

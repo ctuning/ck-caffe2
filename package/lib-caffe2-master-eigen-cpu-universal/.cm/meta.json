@@ -16,6 +16,7 @@
       "PACKAGE_CONFIGURE_FLAGS_WINDOWS": "", 
       "PACKAGE_COPY": "NO", 
       "PACKAGE_GIT": "YES", 
+      "PACKAGE_GIT_CLONE_FLAGS": "--recursive", 
       "PACKAGE_PATCH": "YES", 
       "PACKAGE_SKIP_BUILD_ERROR": "YES", 
       "PACKAGE_SKIP_CLEAN_INSTALL": "NO", 
@@ -46,7 +47,7 @@
       "WHICH_BLAS": "Eigen"
     }, 
     "use_git_revision": "yes", 
-    "version": "trunk"
+    "version": "master"
   }, 
   "deps": {
     "cmake": {
@@ -72,55 +73,51 @@
       "force_env_init": "yes", 
       "local": "yes", 
       "name": "GFlags library", 
-      "skip_installed": {
-        "android": "yes", 
-        "win": "yes"
-      }, 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
+      "skip_default": "yes", 
       "sort": 12, 
-      "tags": "lib,gflags", 
-      "update_tags_by_target_platform2": {
-        "android": "v2.2.0", 
-        "win": ""
-      }
+      "tags": "lib,gflags,v2.2.0"
     }, 
     "lib-glog": {
       "local": "yes", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "name": "GLog library", 
-      "skip_installed": {
-        "android": "yes", 
-        "win": "yes"
-      }, 
+      "skip_default": "yes", 
       "sort": 14, 
-      "tags": "lib,glog"
+      "tags": "lib,glog,v0.3.5"
     }, 
     "lib-lmdb": {
       "local": "yes", 
       "name": "LMDB library", 
       "only_for_target_os_tags": [
-        "linux", 
-        "windows"
-      ], 
+        "linux"
+      ],
+      "skip_default": "yes", 
       "sort": 18, 
-      "tags": "lib,lmdb"
+      "tags": "lib,lmdb,v0.9.21"
     }, 
     "lib-opencv": {
       "local": "yes", 
       "name": "OpenCV library", 
-      "skip_installed": {
-        "android": "yes", 
-        "win": "yes"
-      }, 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
+      "skip_default": "yes", 
       "sort": 20, 
-      "tags": "lib,opencv"
+      "tags": "lib,opencv,v3.3.0"
     }, 
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "name": "ProtoBuf host compiler", 
-      "skip_installed": {
-        "android": "yes", 
-        "win": "yes"
-      }, 
+      "skip_default": "yes", 
       "sort": 115, 
       "tags": "lib,protobuf-host,v3.2.0"
     }, 

@@ -17,6 +17,7 @@
       "PACKAGE_CONFIGURE_FLAGS_WINDOWS": "", 
       "PACKAGE_COPY": "NO", 
       "PACKAGE_GIT": "YES", 
+      "PACKAGE_GIT_CLONE_FLAGS": "--recursive", 
       "PACKAGE_PATCH": "NO", 
       "PACKAGE_SKIP_BUILD_ERROR": "YES", 
       "PACKAGE_SKIP_CLEAN_INSTALL": "NO", 
@@ -84,6 +85,9 @@
       "force_env_init": "yes", 
       "local": "yes", 
       "name": "GFlags library", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "skip_installed": {
         "android": "yes", 
         "win": "yes"
@@ -98,6 +102,9 @@
     "lib-glog": {
       "local": "yes", 
       "name": "GLog library", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "skip_installed": {
         "android": "yes", 
         "win": "yes"
@@ -109,15 +116,17 @@
       "local": "yes", 
       "name": "LMDB library", 
       "only_for_target_os_tags": [
-        "linux", 
-        "windows"
-      ], 
+        "linux"
+      ],
       "sort": 18, 
       "tags": "lib,lmdb"
     }, 
     "lib-opencv": {
       "local": "yes", 
       "name": "OpenCV library", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "skip_installed": {
         "android": "yes", 
         "win": "yes"
@@ -128,6 +137,9 @@
     "lib-protobuf-host": {
       "force_target_as_host": "yes", 
       "local": "yes", 
+      "only_for_target_os_tags": [
+        "linux"
+      ],
       "name": "ProtoBuf host compiler", 
       "skip_installed": {
         "android": "yes", 
