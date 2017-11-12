@@ -14,7 +14,9 @@ we decided to take an alternative approach.
 
 We started adding existing AI frameworks including [Caffe](https://github.com/dividiti/ck-caffe), 
 [Caffe2](https://github.com/ctuning/ck-caffe2), [TensorFlow](https://github.com/ctuning/ck-tensorflow),
-[MXNet](https://github.com/ctuning/ck-mxnet) and [CNTK](https://github.com/ctuning/ck-cntk) 
+[MXNet](https://github.com/ctuning/ck-mxnet), [CNTK](https://github.com/ctuning/ck-cntk) 
+and [MVNC](https://github.com/ctuning/ck-mvnc).
+
 to the non-intrusive open-source [Collective Knowledge workflow framework (CK)](https://github.com/ctuning/ck).
 CK allows to plug in various versions of AI frameworks together with libraries, compilers, tools, models
 and data sets as [unified and reusable components with JSON API](http://cKnowledge.org/ai-artifacts), 
