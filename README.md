@@ -26,7 +26,8 @@ and provide simple JSON API for common operations such as prediction and trainin
 At the same time, CK allows us to continuously optimize ([1](https://arxiv.org/abs/1506.06256), [2](http://doi.acm.org/10.1145/2909437.2909449))
 the whole AI stack (SW/HW/models) across diverse platforms from mobile devices and IoT to supercomputers
 in terms of accuracy, execution time, power consumption, resource usage and other costs with the
-help of the community (see [public CK repo](http://cKnowledge.org/repo)).
+help of the community (see [public CK repo](http://cKnowledge.org/repo) 
+and [reproducible and CK-powered AI/SW/HW co-design competitions at ACM/IEEE conferences](http://cKnowledge.org/request)).
 
 See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
