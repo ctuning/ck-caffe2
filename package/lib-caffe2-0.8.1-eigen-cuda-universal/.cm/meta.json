@@ -145,7 +145,7 @@
     }
   },
   "end_full_path": {
-    "linux": "install/lib/libcaffe2_gpu.so",
+    "linux": "install/lib/libCaffe2_GPU.so",
     "win": "install/lib/caffe2_gpu.lib"
   },
   "need_cpu_info": "yes",
