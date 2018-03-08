@@ -54,6 +54,12 @@ $ ck install package --tags=lib,caffe,vcpu --env.CAFFE_BUILD_PYTHON=ON
 $ ck install package --tags=lib,caffe2,vcpu
 ```
 
+Using compiled Caffe (with python) as a virtual environment:
+```
+$ ck virtual env --tags=lib,caffe
+$ ipython
+```
+
 ## Dependencies for Windows
 
 We tested it with Anaconda Python 2.x (should be in path for pip). Note that only stable package currently works - 0.8.1 (there is an issue with custom protobuf in the master branch)
