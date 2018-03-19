@@ -66,9 +66,12 @@ We tested it with Anaconda Python 2.x (should be in path for pip). Note that onl
 
 ```
 $ pip install jupyter pandas numpy scipy matplotlib scikit-image scikit-learn pyyaml protobuf future google
+$ pip install flask glog graphviz  pydot python-nvd3 pyyaml requests scikit-image setuptools tornado
+$ pip install future hypothesis six
 $ pip install --upgrade beautifulsoup4
 $ pip install --upgrade html5lib
 ```
+
 
 ## Example of Caffe2 unified CPU installation on Raspberry Pi 3+
 

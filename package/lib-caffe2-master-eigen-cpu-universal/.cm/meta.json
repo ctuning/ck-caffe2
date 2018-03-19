@@ -27,6 +27,7 @@
       "PACKAGE_URL": "https://github.com/caffe2/caffe2", 
       "PYTHON_EXE": "python", 
       "USE_CNMEM": "OFF", 
+      "USE_CUB": "OFF", 
       "USE_CUDA": "OFF", 
       "USE_GFLAGS": "ON", 
       "USE_GLOG": "ON", 
@@ -50,7 +51,7 @@
     "version": "master"
   }, 
   "deps": {
-    "cmake": {
+     "cmake": {
       "force_target_as_host": "yes", 
       "local": "yes", 
       "name": "cmake", 
@@ -126,12 +127,7 @@
       "local": "yes", 
       "name": "python", 
       "sort": 0, 
-      "tags": "compiler,python", 
-      "version_to": [
-        2, 
-        8, 
-        0
-      ]
+      "tags": "compiler,python" 
     }
   }, 
   "end_full_path": {
