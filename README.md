@@ -93,7 +93,7 @@ $ ck install package --tags=lib,caffe2,vcpu --env.CK_HOST_CPU_NUMBER_OF_PROCESSO
 ## Example of Caffe and Caffe2 unified CUDA installation on Ubuntu via CK
 
 If you have CUDA-compatible GPGPU with drivers, CUDA and cuDNN installed,
-you can install Caffe and Caffe2 for GPGPU via CK as following
+you can install Caffe and Caffe2 for GPGPU via CK as follows
 (CK will automatically find your CUDA installation):
 
 ```
@@ -148,7 +148,7 @@ however they can also be aggregated only on your local machine or in your workgr
 ## Unified, multi-dimensional and multi-objective autotuning
 
 It is now possible to take advantage of our [universal multi-objective CK autotuner](https://github.com/ctuning/ck/wiki/Autotuning)
-to optimize Caffe. As a first simple example, we added batch size tuning via CK. You can invoke it as following:
+to optimize Caffe. As a first simple example, we added batch size tuning via CK. You can invoke it as follows:
 
 ```
 $ ck autotune caffe
