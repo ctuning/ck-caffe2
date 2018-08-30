@@ -227,7 +227,7 @@ hardware price and other costs
 We are working with the community to unify and crowdsource performance analysis 
 and tuning of various DNN frameworks (or any realistic workload) 
 using Collective Knowledge Technology:
-* [Android app for DNN crowd-benchmarking and crowd-tuning](https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments)
+* [Android app for DNN crowd-benchmarking and crowd-tuning](http://cKnowledge.org/android-apps.html)
 * [CK-TensorFlow](https://github.com/ctuning/ck-tensorflow)
 * [CK-Caffe](https://github.com/dividiti/ck-caffe)
 * [CK-Caffe2](https://github.com/ctuning/ck-caffe2)
