@@ -1,81 +1,81 @@
 {
-  "check_exit_status": "yes", 
+  "check_exit_status": "yes",
   "customize": {
-    "extra_dir": "", 
-    "file_with_weights": "squeezenet_v1.1.caffemodel2", 
-    "force_ask_path": "yes", 
+    "extra_dir": "",
+    "file_with_weights": "squeezenet_v1.1.caffemodel2",
+    "force_ask_path": "yes",
     "install_env": {
-      "MODEL_FILE": "squeezenet_v1.1.caffemodel2", 
-      "MODEL_HASH_CALCULATOR": "sha1sum", 
-      "MODEL_HASH_REF": "241c76ec86cb8d13aa02434b89917866e888b8c8", 
+      "MODEL_FILE": "squeezenet_v1.1.caffemodel2",
+      "MODEL_HASH_CALCULATOR": "sha1sum",
+      "MODEL_HASH_REF": "241c76ec86cb8d13aa02434b89917866e888b8c8",
       "MODEL_URL": "http://cKnowledge.org/ai/data/squeezenet_v1.1.caffemodel2"
-    }, 
-    "no_os_in_suggested_path": "yes", 
-    "no_ver_in_suggested_path": "yes", 
+    },
+    "no_os_in_suggested_path": "yes",
+    "no_ver_in_suggested_path": "yes",
     "params": {
       "deploy": {
         "substitute": {
           "batch_size": 10
-        }, 
+        },
         "template": "deploy.prototxt"
-      }, 
+      },
       "train": {
         "substitute": {
-          "train_batch_size": 32, 
+          "train_batch_size": 32,
           "val_batch_size": 25
-        }, 
+        },
         "template": "train_val.prototxt"
-      }, 
+      },
       "val": {
         "accuracy_layers": [
-          "accuracy", 
-          "accuracy_top5", 
+          "accuracy",
+          "accuracy_top5",
           "loss"
-        ], 
+        ],
         "substitute": {
-          "train_batch_size": 32, 
+          "train_batch_size": 32,
           "val_batch_size": 25
-        }, 
+        },
         "template": "train_val.prototxt"
       }
-    }, 
-    "skip_file_check": "yes", 
+    },
+    "skip_file_check": "yes",
     "version": "1.1"
-  }, 
+  },
   "end_full_path": {
-    "linux": "squeezenet_v1.1.caffemodel2", 
+    "linux": "squeezenet_v1.1.caffemodel2",
     "win": "squeezenet_v1.1.caffemodel2"
-  }, 
+  },
   "features": {
-    "accuracy": 0.58388, 
-    "accuracy_top5": 0.810123, 
+    "accuracy": 0.58388,
+    "accuracy_top5": 0.810123,
     "model_size_mb": 5
-  }, 
+  },
   "only_for_host_os_tags": [
-    "windows", 
+    "windows",
     "linux"
-  ], 
+  ],
   "only_for_target_os_tags": [
-    "windows", 
+    "windows",
     "linux"
-  ], 
-  "package_extra_name": " (deepscale, squeezenet, 1.1)", 
-  "process_script": "download", 
-  "soft_uoa": "0512081c543edb2e", 
-  "suggested_path": "caffemodel2-deepscale-squeezenet-1.1", 
+  ],
+  "package_extra_name": " (deepscale, squeezenet, 1.1)",
+  "process_script": "download",
+  "soft_uoa": "0512081c543edb2e",
+  "suggested_path": "caffemodel2-deepscale-squeezenet-1.1",
   "tags": [
-    "caffe2", 
-    "weights", 
-    "caffemodel2", 
-    "deepscale", 
-    "squeezenet", 
-    "v1.1", 
+    "caffe2",
+    "weights",
+    "caffemodel2",
+    "deepscale",
+    "squeezenet",
+    "v1.1",
     "v1",
     "channel-stable"
-  ], 
+  ],
   "use_scripts_from_another_entry": {
-    "data_uoa": "download-caffemodel", 
-    "module_uoa": "script", 
+    "data_uoa": "download-caffemodel",
+    "module_uoa": "script",
     "repo_uoa": "ck-caffe"
   }
 }

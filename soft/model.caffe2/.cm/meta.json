@@ -1,25 +1,25 @@
 {
-  "auto_detect": "yes", 
+  "auto_detect": "yes",
   "customize": {
-    "check_that_exists": "yes", 
-    "ck_params_file": "ck-params.json", 
-    "ck_version": 10, 
-    "env_prefix": "CK_ENV_MODEL_CAFFE2", 
+    "check_that_exists": "yes",
+    "ck_params_file": "ck-params.json",
+    "ck_version": 10,
+    "env_prefix": "CK_ENV_MODEL_CAFFE2",
     "limit_recursion_dir_search": {
-      "linux": 3, 
+      "linux": 3,
       "win": 3
-    }, 
+    },
     "soft_file": {
-      "linux": "predict_net.pb", 
+      "linux": "predict_net.pb",
       "win": "predict_net.pb"
     }
-  }, 
-  "soft_name": "Caffe2 model (net and weights)", 
+  },
+  "soft_name": "Caffe2 model (net and weights)",
   "tags": [
-    "caffe2", 
-    "net", 
-    "weights", 
-    "caffemodel2", 
+    "caffe2",
+    "net",
+    "weights",
+    "caffemodel2",
     "bvlc"
   ]
 }

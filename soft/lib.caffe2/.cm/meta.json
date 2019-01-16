@@ -1,23 +1,23 @@
 {
-  "auto_detect": "yes", 
+  "auto_detect": "yes",
   "customize": {
-    "check_that_exists": "yes", 
-    "ck_version": 10, 
-    "env_prefix": "CK_ENV_LIB_CAFFE2", 
+    "check_that_exists": "yes",
+    "ck_version": 10,
+    "env_prefix": "CK_ENV_LIB_CAFFE2",
     "limit_recursion_dir_search": {
-      "linux": 4, 
+      "linux": 4,
       "win": 4
-    }, 
+    },
     "soft_file": {
-      "linux": "libcaffe2.so", 
+      "linux": "libcaffe2.so",
       "win": "caffe2.exe"
     }
-  }, 
-  "deps": {}, 
-  "soft_name": "Facebook Caffe2 framework", 
+  },
+  "deps": {},
+  "soft_name": "Facebook Caffe2 framework",
   "tags": [
-    "lib", 
+    "lib",
     "facebook",
-    "caffe2" 
+    "caffe2"
   ]
 }

@@ -19,5 +19,7 @@
   "module_deps": {
     "experiment.bench.caffe2": "75114c4997197226",
     "program": "b0ac08fe1d3c2615"
-  }
+  },
+  "workflow": "yes",
+  "workflow_type": "caffe2 pipeline"
 }
