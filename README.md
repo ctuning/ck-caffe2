@@ -37,9 +37,8 @@ and [reproducible and CK-powered AI/SW/HW co-design competitions at ACM/IEEE con
 
 See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
 
-## Coordination of development
-* [cTuning Foundation](http://cTuning.org)
-* [dividiti](http://dividiti.com)
+## Maintainers
+* [dividiti](http://dividiti.com) - not actively maintained
 
 ## Example of Caffe and Caffe2 unified CPU installation on Ubuntu via CK
 
