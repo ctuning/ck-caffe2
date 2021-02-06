@@ -1,9 +1,10 @@
 {
-  "data_uid": "b8adffa0791cb38a", 
-  "data_name": "ck-caffe2", 
+  "data_alias": "ck-caffe2",
+  "data_name": "ck-caffe2",
+  "data_uid": "b8adffa0791cb38a",
+  "data_uoa": "ck-caffe2",
   "dict": {
-    "url": "https://github.com/ctuning/ck-caffe2", 
-    "shared": "git",
+    "desc": "[PACKAGES MUST BE UPDATED SINCE CAFFE2 MOVED TO ANOTHER GITHUB REPOSITORY] Portable/customizable installation and unified access to Caffe2 AI framework with different workflows and data sets (see <a href=\"https://arxiv.org/abs/1801.06378\">ReQuEST intro</a>).",
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
@@ -14,8 +15,8 @@
       {
         "repo_uoa": "ck-caffe"
       }
-    ]
-  }, 
-  "data_alias": "ck-caffe2", 
-  "data_uoa": "ck-caffe2"
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/ck-caffe2"
+  }
 }
