@@ -1,4 +1,4 @@
-**All CK components can be found at [cKnowledge.io](https://cKnowledge.io) and in [one GitHub repository](https://github.com/ctuning/ai)!**
+**All CK components can be found at [cKnowledge.io](https://cKnowledge.io) and in [one GitHub repository](https://github.com/ctuning/ck-mlops)!**
 
 [![compatibility](https://github.com/ctuning/ck-guide-images/blob/master/ck-compatible.svg)](https://github.com/ctuning/ck)
 [![automation](https://github.com/ctuning/ck-guide-images/blob/master/ck-artifact-automated-and-reusable.svg)](http://cTuning.org/ae)
@@ -17,7 +17,7 @@ After spending most of our "research" time not on AI innovation but on dealing w
 and ever changing AI engines, their API, and the whole software and hardware stack, 
 we decided to take an alternative approach. 
 
-[![logo](http://cknowledge.org/images/ai-cloud-resize.png)](http://cKnowledge.org/ai)
+[![logo](http://cknowledge.org/images/ai-cloud-resize.png)](http://cKnowledge.io)
 
 We started adding existing AI frameworks including [Caffe](https://github.com/dividiti/ck-caffe), 
 [Caffe2](https://github.com/ctuning/ck-caffe2), [TensorFlow](https://github.com/ctuning/ck-tensorflow),
@@ -27,7 +27,7 @@ and [MVNC](https://github.com/ctuning/ck-mvnc).
 
 to the non-intrusive open-source [Collective Knowledge workflow framework (CK)](https://github.com/ctuning/ck).
 CK allows to plug in various versions of AI frameworks together with libraries, compilers, tools, models
-and data sets as [unified and reusable components with JSON API](http://cKnowledge.org/ai-artifacts), 
+and data sets as [unified and reusable components with JSON API](http://cKnowledge.io), 
 automate and customize their installation across Linux, Windows, MacOS and Android (rather than using ad-hoc scripts) 
 and provide simple JSON API for common operations such as prediction and training (see [demo](http://cKnowledge.org/ai/ck-api-demo)).
 
@@ -37,7 +37,7 @@ in terms of accuracy, execution time, power consumption, resource usage and othe
 help of the community (see [public CK repo](http://cKnowledge.org/repo) 
 and [reproducible and CK-powered AI/SW/HW co-design competitions at ACM/IEEE conferences](http://cKnowledge.org/request)).
 
-See [cKnowledge.org/ai](http://cKnowledge.org/ai) for more details.
+See [cKnowledge.io](http://cKnowledge.io) for more details.
 
 ## Maintainers
 * [dividiti](http://dividiti.com) - not actively maintained
